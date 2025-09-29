@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Details - CSPIT</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lightbox CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --accent-color: #fd7e14;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .club-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .club-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            background-color: white;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .club-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .faculty-card, .coordinator-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+
+        .faculty-card:hover, .coordinator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .faculty-img, .coordinator-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .event-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .event-img-container {
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+        }
+
+        .event-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .event-card:hover .event-img {
+            transform: scale(1.05);
+        }
+
+        .event-gallery-img {
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .event-gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        .breadcrumb-custom {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 20px;
+            background-color: white;
+            color: var(--dark-color);
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .achievement-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .stat-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .stat-title {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Loading spinner */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+        }
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <!-- You can include your website's navigation here -->
+
+    <div class="container py-5" id="club-container" style="display: none;">
+        <!-- Breadcrumb & Back Button -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="clubs.html">Clubs</a></li>
+                    <li class="breadcrumb-item active" id="club-name-breadcrumb" aria-current="page">Loading...</li>
+                </ol>
+            </nav>
+            <a href="clubs.html" class="back-btn">
+                <i class="fas fa-arrow-left me-2"></i> Back to Clubs
+            </a>
+        </div>
+
+        <!-- Club Header -->
+        <div class="club-header p-4 mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+                    <img id="club-logo" src="/placeholder.svg?height=150&width=150" alt="Club Logo" class="club-logo">
+                </div>
+                <div class="col-md-9">
+                    <h1 class="display-4 fw-bold mb-2" id="club-name">Loading...</h1>
+                    <p class="lead mb-3" id="club-tagline">Loading...</p>
+                    <div class="d-flex flex-wrap mt-3" id="club-badges">
+                        <!-- Badges will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="row mb-5" id="stats-container">
+            <!-- Stats will be populated here -->
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section mb-5">
+            <h2 class="section-title">About the Club</h2>
+            <p class="lead" id="club-lead">Loading...</p>
+            <p id="club-description-1">Loading...</p>
+            <p id="club-description-2">Loading...</p>
+            <div class="mt-4">
+                <h5 class="fw-bold mb-3">Club Activities:</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush" id="activities-list-1">
+                            <!-- Activities will be populated here -->
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush" id="activities-list-2">
+                            <!-- Activities will be populated here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faculty Advisors Section -->
+        <h2 class="section-title">Faculty Advisors</h2>
+        <div class="row mb-5" id="faculty-container">
+            <!-- Faculty cards will be populated here -->
+        </div>
+
+        <!-- Student Coordinators Section -->
+        <h2 class="section-title">Student Coordinators</h2>
+        <div class="row mb-5" id="coordinator-container">
+            <!-- Coordinator cards will be populated here -->
+        </div>
+
+        <!-- Events Section -->
+        <h2 class="section-title">Recent Events</h2>
+        <div class="row mb-5" id="events-container">
+            <!-- Event cards will be populated here -->
+        </div>
+
+        <!-- Events Gallery Section -->
+        <h2 class="section-title">Events Gallery</h2>
+        <div class="row mb-5" id="gallery-container">
+            <!-- Gallery images will be populated here -->
+        </div>
+
+        <!-- Join Us Section -->
+        <div class="row mb-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="text-center p-5 bg-white rounded-3 shadow-sm">
+                    <h2 class="mb-4">Join Our Club</h2>
+                    <p class="lead mb-4" id="join-text">Want to be a part of our thriving community? Join the club and embark on an exciting journey of learning and innovation!</p>
+                    <a href="#" class="btn btn-primary btn-lg px-4 py-2" id="register-btn">
+                        <i class="fas fa-user-plus me-2"></i>Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Gallery Modals Container -->
+    <div id="modals-container">
+        <!-- Event modals will be populated here -->
+    </div>
+
+    <!-- Footer -->
+    <!-- You can include your website's footer here -->
+
+    <!-- SheetJS (xlsx) library for Excel parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Global variables to store Excel data
+        let clubData = {};
+        let facultyData = [];
+        let coordinatorData = [];
+        let eventsData = [];
+        let galleryData = [];
+        let statsData = [];
+        let activitiesData = [];
+
+        // Function to read Excel file
+        async function readExcelFile() {
+            try {
+                const response = await fetch('club.xlsx');
+                const arrayBuffer = await response.arrayBuffer();
+                const data = new Uint8Array(arrayBuffer);
+                const workbook = XLSX.read(data, { type: 'array' });
+                
+                // Process each sheet
+                processClubInfoSheet(workbook.Sheets['ClubInfo']);
+                processFacultySheet(workbook.Sheets['Faculty']);
+                processCoordinatorsSheet(workbook.Sheets['Coordinators']);
+                processEventsSheet(workbook.Sheets['Events']);
+                processGallerySheet(workbook.Sheets['Gallery']);
+                processStatsSheet(workbook.Sheets['Stats']);
+                processActivitiesSheet(workbook.Sheets['Activities']);
+                
+                // Populate the UI with the data
+                populateUI();
+                
+                // Hide loader and show content
+                document.getElementById('loader').classList.add('hidden');
+                document.getElementById('club-container').style.display = 'block';
+                
+                // Initialize animations and lightbox
+                initializeAnimations();
+            } catch (error) {
+                console.error('Error reading Excel file:', error);
+                alert('Error loading club data. Please try again later.');
+            }
+        }
+
+        // Process ClubInfo sheet
+        function processClubInfoSheet(sheet) {
+            if (!sheet) {
+                console.error('ClubInfo sheet not found');
+                return;
+            }
+            
+            const jsonData = XLSX.utils.sheet_to_json(sheet);
+            if (jsonData.length > 0) {
+                clubData = jsonData[0]; // Assuming first row contains club info
+            }
+        }
+
+        // Process Faculty sheet
+        function processFacultySheet(sheet) {
+            if (!sheet) {
+                console.error('Faculty sheet not found');
+                return;
+            }
+            
+            facultyData = XLSX.utils.sheet_to_json(sheet);
+        }
+
+        // Process Coordinators sheet
+        function processCoordinatorsSheet(sheet) {
+            if (!sheet) {
+                console.error('Coordinators sheet not found');
+                return;
+            }
+            
+            coordinatorData = XLSX.utils.sheet_to_json(sheet);
+        }
+
+        // Process Events sheet
+        function processEventsSheet(sheet) {
+            if (!sheet) {
+                console.error('Events sheet not found');
+                return;
+            }
+            
+            eventsData = XLSX.utils.sheet_to_json(sheet);
+        }
+
+        // Process Gallery sheet
+        function processGallerySheet(sheet) {
+            if (!sheet) {
+                console.error('Gallery sheet not found');
+                return;
+            }
+            
+            galleryData = XLSX.utils.sheet_to_json(sheet);
+        }
+
+        // Process Stats sheet
+        function processStatsSheet(sheet) {
+            if (!sheet) {
+                console.error('Stats sheet not found');
+                return;
+            }
+            
+            statsData = XLSX.utils.sheet_to_json(sheet);
+        }
+
+        // Process Activities sheet
+        function processActivitiesSheet(sheet) {
+            if (!sheet) {
+                console.error('Activities sheet not found');
+                return;
+            }
+            
+            activitiesData = XLSX.utils.sheet_to_json(sheet);
+        }
+
+        // Populate UI with data from Excel
+        function populateUI() {
+            // Populate club info
+            populateClubInfo();
+            
+            // Populate stats
+            populateStats();
+            
+            // Populate activities
+            populateActivities();
+            
+            // Populate faculty
+            populateFaculty();
+            
+            // Populate coordinators
+            populateCoordinators();
+            
+            // Populate events
+            populateEvents();
+            
+            // Populate gallery
+            populateGallery();
+            
+            // Create event modals
+            createEventModals();
+        }
+
+        // Populate club info
+        function populateClubInfo() {
+            if (!clubData) return;
+            
+            // Set club name in breadcrumb
+            document.getElementById('club-name-breadcrumb').textContent = clubData.Name || 'Club';
+            
+            // Set club logo
+            const logoElement = document.getElementById('club-logo');
+            logoElement.src = clubData.LogoURL || '/placeholder.svg?height=150&width=150';
+            logoElement.alt = `${clubData.Name} Logo`;
+            
+            // Set club name and tagline
+            document.getElementById('club-name').textContent = clubData.Name || 'Club Name';
+            document.getElementById('club-tagline').textContent = clubData.Tagline || 'Club Tagline';
+            
+            // Set club badges
+            const badgesContainer = document.getElementById('club-badges');
+            badgesContainer.innerHTML = '';
+            
+            if (clubData.EstablishedYear) {
+                badgesContainer.innerHTML += `
+                    <span class="badge bg-light text-dark me-2 mb-2 p-2">
+                        <i class="fas fa-calendar-alt me-1"></i> Est. ${clubData.EstablishedYear}
+                    </span>
+                `;
+            }
+            
+            if (clubData.MemberCount) {
+                badgesContainer.innerHTML += `
+                    <span class="badge bg-light text-dark me-2 mb-2 p-2">
+                        <i class="fas fa-users me-1"></i> ${clubData.MemberCount}+ Members
+                    </span>
+                `;
+            }
+            
+            if (clubData.AwardsCount) {
+                badgesContainer.innerHTML += `
+                    <span class="badge bg-light text-dark me-2 mb-2 p-2">
+                        <i class="fas fa-trophy me-1"></i> ${clubData.AwardsCount}+ Awards
+                    </span>
+                `;
+            }
+            
+            if (clubData.MeetingFrequency) {
+                badgesContainer.innerHTML += `
+                    <span class="badge bg-light text-dark me-2 mb-2 p-2">
+                        <i class="fas fa-laptop-code me-1"></i> ${clubData.MeetingFrequency}
+                    </span>
+                `;
+            }
+            
+            // Set about section
+            document.getElementById('club-lead').textContent = clubData.Lead || 'About the club';
+            document.getElementById('club-description-1').textContent = clubData.Description1 || '';
+            document.getElementById('club-description-2').textContent = clubData.Description2 || '';
+            
+            // Set join text
+            document.getElementById('join-text').textContent = clubData.JoinText || 'Want to be a part of our thriving community? Join the club and embark on an exciting journey of learning and innovation!';
+            
+            // Set register button text and link
+            const registerBtn = document.getElementById('register-btn');
+            if (clubData.RegisterButtonText) {
+                registerBtn.innerHTML = `<i class="fas fa-user-plus me-2"></i>${clubData.RegisterButtonText}`;
+            }
+            if (clubData.RegisterURL) {
+                registerBtn.href = clubData.RegisterURL;
+            }
+        }
+
+        // Populate stats
+        function populateStats() {
+            const statsContainer = document.getElementById('stats-container');
+            statsContainer.innerHTML = '';
+            
+            if (statsData.length === 0) {
+                // Default stats if none provided
+                statsContainer.innerHTML = `
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-number" data-count="${clubData.EventsCount || 0}">0</div>
+                            <div class="stat-title">EVENTS ORGANIZED</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-number" data-count="${clubData.MemberCount || 0}">0</div>
+                            <div class="stat-title">ACTIVE MEMBERS</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-number" data-count="${clubData.AwardsCount || 0}">0</div>
+                            <div class="stat-title">AWARDS WON</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="stat-number" data-count="${clubData.ProjectsCount || 0}">0</div>
+                            <div class="stat-title">PROJECTS COMPLETED</div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Create stats from Excel data
+            statsData.forEach(stat => {
+                statsContainer.innerHTML += `
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas ${stat.Icon || 'fa-chart-bar'}"></i>
+                            </div>
+                            <div class="stat-number" data-count="${stat.Count || 0}">0</div>
+                            <div class="stat-title">${stat.Title || 'STAT'}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Populate activities
+        function populateActivities() {
+            const activitiesList1 = document.getElementById('activities-list-1');
+            const activitiesList2 = document.getElementById('activities-list-2');
+            
+            activitiesList1.innerHTML = '';
+            activitiesList2.innerHTML = '';
+            
+            if (activitiesData.length === 0) {
+                // Default activities if none provided
+                activitiesList1.innerHTML = `
+                    <li class="list-group-item bg-transparent"><i class="fas fa-laptop-code text-primary me-2"></i> Weekly Coding Sessions</li>
+                    <li class="list-group-item bg-transparent"><i class="fas fa-chalkboard-teacher text-primary me-2"></i> Technical Workshops</li>
+                    <li class="list-group-item bg-transparent"><i class="fas fa-trophy text-primary me-2"></i> Coding Competitions</li>
+                `;
+                
+                activitiesList2.innerHTML = `
+                    <li class="list-group-item bg-transparent"><i class="fas fa-project-diagram text-primary me-2"></i> Project Development</li>
+                    <li class="list-group-item bg-transparent"><i class="fas fa-users text-primary me-2"></i> Networking Events</li>
+                    <li class="list-group-item bg-transparent"><i class="fas fa-industry text-primary me-2"></i> Industry Visits</li>
+                `;
+                return;
+            }
+            
+            // Split activities into two columns
+            const midpoint = Math.ceil(activitiesData.length / 2);
+            
+            // First column
+            for (let i = 0; i < midpoint && i < activitiesData.length; i++) {
+                const activity = activitiesData[i];
+                activitiesList1.innerHTML += `
+                    <li class="list-group-item bg-transparent">
+                        <i class="fas ${activity.Icon || 'fa-check'} text-primary me-2"></i> ${activity.Activity || 'Activity'}
+                    </li>
+                `;
+            }
+            
+            // Second column
+            for (let i = midpoint; i < activitiesData.length; i++) {
+                const activity = activitiesData[i];
+                activitiesList2.innerHTML += `
+                    <li class="list-group-item bg-transparent">
+                        <i class="fas ${activity.Icon || 'fa-check'} text-primary me-2"></i> ${activity.Activity || 'Activity'}
+                    </li>
+                `;
+            }
+        }
+
+        // Populate faculty
+        function populateFaculty() {
+            const facultyContainer = document.getElementById('faculty-container');
+            facultyContainer.innerHTML = '';
+            
+            if (facultyData.length === 0) {
+                // Default faculty if none provided
+                facultyContainer.innerHTML = `
+                    <div class="col-md-4 mb-4">
+                        <div class="faculty-card bg-white p-3">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="/placeholder.svg?height=80&width=80" alt="Faculty" class="faculty-img me-3">
+                                <div>
+                                    <h5 class="mb-1">Faculty Name</h5>
+                                    <p class="text-muted mb-0">Position</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <span>Contact Number</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span>Email Address</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Create faculty cards from Excel data
+            facultyData.forEach(faculty => {
+                facultyContainer.innerHTML += `
+                    <div class="col-md-4 mb-4">
+                        <div class="faculty-card bg-white p-3">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="${faculty.ImageURL || '/placeholder.svg?height=80&width=80'}" alt="${faculty.Name || 'Faculty'}" class="faculty-img me-3">
+                                <div>
+                                    <h5 class="mb-1">${faculty.Name || 'Faculty Name'}</h5>
+                                    <p class="text-muted mb-0">${faculty.Position || 'Position'}</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <span>${faculty.Phone || 'Contact Number'}</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span>${faculty.Email || 'Email Address'}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Populate coordinators
+        function populateCoordinators() {
+            const coordinatorContainer = document.getElementById('coordinator-container');
+            coordinatorContainer.innerHTML = '';
+            
+            if (coordinatorData.length === 0) {
+                // Default coordinators if none provided
+                coordinatorContainer.innerHTML = `
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="coordinator-card bg-white p-3 text-center">
+                            <img src="/placeholder.svg?height=80&width=80" alt="Coordinator" class="coordinator-img mb-3">
+                            <h5 class  alt="Coordinator" class="coordinator-img mb-3">
+                            <h5 class="mb-1">Coordinator Name</h5>
+                            <p class="text-muted mb-2">Position</p>
+                            <p class="mb-2"><i class="fas fa-phone-alt me-2 text-primary"></i>Contact Number</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2"><i class="fab fa-github"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Create coordinator cards from Excel data
+            coordinatorData.forEach(coordinator => {
+                coordinatorContainer.innerHTML += `
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="coordinator-card bg-white p-3 text-center">
+                            <img src="${coordinator.ImageURL || '/placeholder.svg?height=80&width=80'}" alt="${coordinator.Name || 'Coordinator'}" class="coordinator-img mb-3">
+                            <h5 class="mb-1">${coordinator.Name || 'Coordinator Name'}</h5>
+                            <p class="text-muted mb-2">${coordinator.Position || 'Position'}</p>
+                            <p class="mb-2"><i class="fas fa-phone-alt me-2 text-primary"></i>${coordinator.Phone || 'Contact Number'}</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="${coordinator.LinkedIn || '#'}" class="btn btn-sm btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="${coordinator.GitHub || '#'}" class="btn btn-sm btn-outline-primary me-2"><i class="fab fa-github"></i></a>
+                                <a href="mailto:${coordinator.Email || '#'}" class="btn btn-sm btn-outline-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Populate events
+        function populateEvents() {
+            const eventsContainer = document.getElementById('events-container');
+            eventsContainer.innerHTML = '';
+            
+            if (eventsData.length === 0) {
+                // Default events if none provided
+                eventsContainer.innerHTML = `
+                    <div class="col-lg-6 mb-4">
+                        <div class="event-card bg-white overflow-hidden">
+                            <div class="event-img-container">
+                                <div class="achievement-badge">Event Type</div>
+                                <img src="/placeholder.svg?height=300&width=600" alt="Event" class="event-img">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="mb-2">Event Name</h4>
+                                <p class="text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>Event Date</p>
+                                <p class="mb-3">Event Description</p>
+                                <div class="d-flex mt-3">
+                                    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#eventModal1">
+                                        <i class="fas fa-images me-2"></i>View Gallery
+                                    </button>
+                                    <button class="btn btn-outline-primary">
+                                        <i class="fas fa-info-circle me-2"></i>Event Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Create event cards from Excel data
+            eventsData.forEach((event, index) => {
+                eventsContainer.innerHTML += `
+                    <div class="col-lg-6 mb-4">
+                        <div class="event-card bg-white overflow-hidden">
+                            <div class="event-img-container">
+                                ${event.Badge ? `<div class="achievement-badge">${event.Badge}</div>` : ''}
+                                <img src="${event.ImageURL || '/placeholder.svg?height=300&width=600'}" alt="${event.Name || 'Event'}" class="event-img">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="mb-2">${event.Name || 'Event Name'}</h4>
+                                <p class="text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>${event.Date || 'Event Date'}</p>
+                                <p class="mb-3">${event.Description || 'Event Description'}</p>
+                                <div class="d-flex mt-3">
+                                    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#eventModal${index}">
+                                        <i class="fas fa-images me-2"></i>View Gallery
+                                    </button>
+                                    <button class="btn btn-outline-primary">
+                                        <i class="fas fa-info-circle me-2"></i>Event Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Populate gallery
+        function populateGallery() {
+            const galleryContainer = document.getElementById('gallery-container');
+            galleryContainer.innerHTML = '';
+            
+            if (galleryData.length === 0) {
+                // Default gallery if none provided
+                for (let i = 0; i < 8; i++) {
+                    galleryContainer.innerHTML += `
+                        <div class="col-md-3 col-6 mb-4">
+                            <a href="/placeholder.svg?height=800&width=1200" data-lightbox="events-gallery" data-title="Gallery Image">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Event Image" class="event-gallery-img w-100">
+                            </a>
+                        </div>
+                    `;
+                }
+                return;
+            }
+            
+            // Create gallery from Excel data
+            galleryData.forEach(image => {
+                galleryContainer.innerHTML += `
+                    <div class="col-md-3 col-6 mb-4">
+                        <a href="${image.LargeURL || image.URL || '/placeholder.svg?height=800&width=1200'}" data-lightbox="events-gallery" data-title="${image.Title || 'Gallery Image'}">
+                            <img src="${image.URL || '/placeholder.svg?height=300&width=400'}" alt="${image.Title || 'Event Image'}" class="event-gallery-img w-100">
+                        </a>
+                    </div>
+                `;
+            });
+        }
+
+        // Create event modals
+        function createEventModals() {
+            const modalsContainer = document.getElementById('modals-container');
+            modalsContainer.innerHTML = '';
+            
+            if (eventsData.length === 0) {
+                // Default modal if no events
+                modalsContainer.innerHTML = `
+                    <div class="modal fade" id="eventModal1" tabindex="-1" aria-labelledby="eventModal1Label" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="eventModal1Label">Event Gallery</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <img src="/placeholder.svg?height=300&width=400" alt="Event Image" class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <img src="/placeholder.svg?height=300&width=400" alt="Event Image" class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <img src="/placeholder.svg?height=300&width=400" alt="Event Image" class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Create modals for each event
+            eventsData.forEach((event, index) => {
+                // Filter gallery images for this event if event ID is provided
+                let eventImages = [];
+                if (event.ID) {
+                    eventImages = galleryData.filter(img => img.EventID === event.ID);
+                }
+                
+                // If no specific images, use placeholder
+                if (eventImages.length === 0) {
+                    eventImages = Array(6).fill({ URL: '/placeholder.svg?height=300&width=400', Title: 'Event Image' });
+                }
+                
+                let imagesHTML = '';
+                eventImages.forEach(img => {
+                    imagesHTML += `
+                        <div class="col-md-4 mb-3">
+                            <img src="${img.URL || '/placeholder.svg?height=300&width=400'}" alt="${img.Title || 'Event Image'}" class="img-fluid rounded">
+                        </div>
+                    `;
+                });
+                
+                modalsContainer.innerHTML += `
+                    <div class="modal fade" id="eventModal${index}" tabindex="-1" aria-labelledby="eventModal${index}Label" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="eventModal${index}Label">${event.Name || 'Event'} Gallery</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        ${imagesHTML}
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Initialize animations and lightbox
+        function initializeAnimations() {
+            // Animate numbers
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200; // The lower the faster
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / speed;
+                let count = 0;
+                
+                const updateCount = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+            });
+
+            // Initialize lightbox
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true,
+                'albumLabel': "Image %1 of %2"
+            });
+        }
+
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            readExcelFile();
+        });
+    </script>
+</body>
+</html>
+

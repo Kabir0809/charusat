@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Details - CSPIT</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Lightbox CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --primary-light: #3b82f6;
+        --primary-dark: #1d4ed8;
+        --secondary-color: #6c757d;
+        --dark-color: #1e293b;
+        --light-color: #f8fafc;
+        --accent-color: #f97316;
+        --accent-light: #fdba74;
+        --success-color: #10b981;
+        --warning-color: #f59e0b;
+        --danger-color: #ef4444;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f1f5f9;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--gray-100);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-light);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Header Section */
+      .club-header {
+        background: linear-gradient(
+          120deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        padding: 3rem 2rem;
+      }
+
+      .club-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .club-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        transform: translate(-30%, 30%);
+      }
+
+      .club-logo {
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        position: relative;
+        z-index: 10;
+      }
+
+      .club-logo:hover {
+        transform: translateY(-10px) rotate(5deg);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Section Styling */
+      .section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        color: var(--dark-color);
+        font-weight: 600;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-color), transparent);
+        border-radius: 2px;
+      }
+
+      /* Card Styling */
+      .custom-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border: none;
+      }
+
+      .custom-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .faculty-card,
+      .coordinator-card {
+        border: none;
+        position: relative;
+      }
+
+      .faculty-card::before,
+      .coordinator-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 5px 5px 0 0;
+      }
+
+      .faculty-img,
+      .coordinator-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .faculty-card:hover .faculty-img,
+      .coordinator-card:hover .coordinator-img {
+        transform: scale(1.05);
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: var(--gray-100);
+        color: var(--primary-color);
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* About Section */
+      .about-section {
+        background-color: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+      /* Event Cards */
+      .event-card {
+        border: none;
+        position: relative;
+      }
+
+      .event-img-container {
+        overflow: hidden;
+        position: relative;
+        height: 220px;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .event-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .event-card:hover .event-img {
+        transform: scale(1.08);
+      }
+
+      .event-date-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+      .event-card .card-body {
+        padding: 1.5rem;
+      }
+      .event-card .card-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+      .btn-view-details {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 30px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .btn-view-details:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      /* Gallery */
+      .gallery-container {
+        position: relative;
+        padding: 40px 0;
+      }
+      .gallery-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--gray-100);
+        border-radius: 20px;
+        z-index: -1;
+      }
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .gallery-img {
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .gallery-item:hover .gallery-img {
+        transform: scale(1.08);
+      }
+      .gallery-item::after {
+        content: "+";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .gallery-item:hover::after {
+        opacity: 1;
+      }
+      /* Back Button */
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 25px;
+        background-color: white;
+        color: var(--dark-color);
+        border-radius: 30px;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .back-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateX(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Badges */
+      .custom-badge {
+        background-color: white;
+        color: var(--dark-color);
+        border-radius: 30px;
+        padding: 8px 15px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .custom-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .custom-badge i {
+        margin-right: 8px;
+        color: var(--primary-color);
+      }
+
+      /* Contact Info */
+      .contact-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .contact-icon {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .contact-info:hover .contact-icon {
+        transform: rotate(360deg);
+      }
+
+      /* Loading spinner */
+      .loader-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 9999;
+      }
+
+      .loader {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: conic-gradient(#0000 10%, var(--primary-color));
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          #0000 calc(100% - 8px),
+          #000 0
+        );
+        animation: loader 1s infinite linear;
+      }
+
+      .loader-text {
+        margin-top: 20px;
+        font-weight: 500;
+        color: var(--primary-color);
+        letter-spacing: 2px;
+      }
+
+      @keyframes loader {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      /* Modal Styling */
+      .modal-content {
+        border-radius: 20px;
+        border: none;
+        overflow: hidden;
+      }
+
+      .modal-header {
+        background: linear-gradient(
+          120deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        color: white;
+        border-bottom: none;
+        padding: 1.5rem;
+      }
+
+      .modal-body {
+        padding: 2rem;
+      }
+
+      .modal-footer {
+        border-top: none;
+        padding: 1.5rem;
+      }
+
+      .btn-modal-close {
+        background-color: var(--gray-200);
+        color: var(--dark-color);
+        border-radius: 30px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-modal-close:hover {
+        background-color: var(--gray-300);
+        transform: translateY(-3px);
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        animation: fadeIn 0.8s ease forwards;
+      }
+
+      .slide-up {
+        animation: slideUp 0.8s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .club-header {
+          padding: 2rem 1.5rem;
+        }
+
+        .club-logo {
+          width: 150px;
+          height: 150px;
+          margin-bottom: 20px;
+        }
+
+        .counter-value {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-section,
+        .stats-counter {
+          padding: 25px;
+        }
+
+        .gallery-img {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .club-logo {
+          width: 120px;
+          height: 120px;
+        }
+
+        .counter-value {
+          font-size: 1.8rem;
+        }
+
+        .gallery-img {
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Spinner -->
+    <div class="loader-container" id="loader">
+      <div class="loader"></div>
+      <p class="loader-text">LOADING...</p>
+    </div>
+
+    <div class="container py-5" id="club-container" style="display: none">
+      <!-- Breadcrumb & Back Button -->
+      <div class="d-flex justify-content-end align-items-center mb-4">
+        <a href="./index.html#club-section" class="back-btn">
+          <i class="fas fa-arrow-left me-2"></i> Back to Clubs
+        </a>
+      </div>
+
+      <!-- Club Header -->
+      <div class="club-header mb-5" data-aos="fade-up">
+        <div class="row align-items-center">
+          <div class="col-lg-3 col-md-4 text-center text-md-start mb-4 mb-md-0">
+            <img
+              id="club-logo"
+              src="/placeholder.svg?height=150&width=150"
+              alt="Club Logo"
+              class="club-logo"
+            />
+          </div>
+          <div class="col-lg-9 col-md-8">
+            <h1 class="display-4 fw-bold mb-3" id="club-name">Loading...</h1>
+            <p class="lead mb-4" id="club-tagline">Loading...</p>
+            <div class="d-flex flex-wrap mt-3" id="club-badges">
+              <!-- Badges will be populated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="about-section mb-5" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="section-title">About the Club</h2>
+        <p id="club-lead" class="fs-5 mb-4 fw-light">
+          The club aims to foster a community of enthusiasts who collaborate,
+          learn, and grow together.
+        </p>
+        <p id="club-description" class="mb-0">Loading...</p>
+      </div>
+
+      <!-- Stats Counter Section -->
+      <div class="stats-counter" data-aos="fade-up" data-aos-delay="150">
+        <div class="row">
+          <div class="col-md-3 col-6 mb-4 mb-md-0">
+            <div class="counter-item">
+              <div class="counter-icon"><i class="fas fa-users"></i></div>
+              <div class="counter-value" data-count="200">0</div>
+              <div class="counter-label">Active Members</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4 mb-md-0">
+            <div class="counter-item">
+              <div class="counter-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="counter-value" data-count="15">0</div>
+              <div class="counter-label">Events Per Year</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="counter-item">
+              <div class="counter-icon"><i class="fas fa-trophy"></i></div>
+              <div class="counter-value" data-count="25">0</div>
+              <div class="counter-label">Awards Won</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="counter-item">
+              <div class="counter-icon"><i class="fas fa-clock"></i></div>
+              <div class="counter-value" data-count="6">0</div>
+              <div class="counter-label">Years Active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faculty Advisors Section -->
+      <h2 class="section-title mt-5" data-aos="fade-up">Faculty Advisors</h2>
+      <div
+        class="row mb-5"
+        id="faculty-container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <!-- Faculty cards will be populated here -->
+      </div>
+
+      <!-- Student Coordinators Section -->
+      <h2 class="section-title" data-aos="fade-up">Student Coordinators</h2>
+      <div
+        class="row mb-5"
+        id="coordinator-container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <!-- Coordinator cards will be populated here -->
+      </div>
+
+      <!-- Events Section -->
+      <h2 class="section-title" data-aos="fade-up">Recent Events</h2>
+      <div
+        class="row mb-5"
+        id="events-container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <!-- Event cards will be populated here -->
+      </div>
+
+      <!-- Events Gallery Section -->
+      <div class="gallery-container" data-aos="fade-up">
+        <div class="gallery-bg"></div>
+        <h2 class="section-title">Events Gallery</h2>
+        <div
+          class="row"
+          id="gallery-container"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <!-- Gallery images will be populated here -->
+        </div>
+      </div>
+
+      <!-- Join Us Section -->
+      <div class="join-section text-center my-5 py-4" data-aos="fade-up">
+        <h2 class="mb-4">Ready to Join Us?</h2>
+        <p class="lead mb-4">
+          Become a part of our vibrant community and explore new opportunities!
+        </p>
+        <button class="btn btn-primary btn-lg px-4 py-2" id="register-btn">
+          <i class="fas fa-user-plus me-2"></i> Join the Club
+        </button>
+      </div>
+    </div>
+
+    <!-- Event Gallery Modals Container -->
+    <div id="modals-container">
+      <!-- Event modals will be populated here -->
+    </div>
+
+    <!-- SheetJS (xlsx) library for Excel parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+      // Global variables to store club data
+      let clubData = {};
+      let facultyData = [];
+      let coordinatorData = [];
+      let eventsData = [];
+      let galleryData = [];
+
+      // Function to read Excel file
+      async function readExcelFile() {
+        try {
+          const response = await fetch("club.xlsx");
+          const arrayBuffer = await response.arrayBuffer();
+          const data = new Uint8Array(arrayBuffer);
+          const workbook = XLSX.read(data, { type: "array" });
+
+          // Get the first sheet
+          const firstSheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[firstSheetName];
+
+          // Convert to JSON
+          const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+          // Process the data
+          if (jsonData.length > 0) {
+            processClubData(jsonData[0]); // Assuming we're looking at the first row
+          }
+
+          // Populate the UI with the data
+          populateUI();
+
+          // Hide loader and show content
+          document.getElementById("loader").classList.add("hidden");
+          document.getElementById("club-container").style.display = "block";
+
+          // Initialize animations and counting effects
+          initializeAnimations();
+        } catch (error) {
+          console.error("Error reading Excel file:", error);
+          alert("Error loading club data. Please try again later.");
+        }
+      }
+
+      // Process club data from the single row format
+      function processClubData(data) {
+        // Basic club info
+        clubData = {
+          id: data["Club ID"] || "",
+          name: data["Club Name"] || "Club Name",
+          logo: data["Logo"] || "",
+          about: data["About"] || "About the club...",
+          // Default values for stats
+          membersCount: 200,
+          eventsCount: 15,
+          awardsCount: 25,
+          yearsActive: 6,
+        };
+
+        // Process faculty coordinators
+        if (data["Faculty Coordinators"]) {
+          const facultyList = data["Faculty Coordinators"].split(";");
+          facultyData = facultyList.map((faculty) => {
+            const parts = faculty.trim().split(",");
+            return {
+              name: parts[0] || "",
+              position: parts[1] || "",
+              email: parts[2] || "",
+              phone: parts[3] || "",
+              image: parts[4] || "img/placeholder-profile.jpg",
+            };
+          });
+        }
+
+        // Process student coordinators
+        if (data["Student Coordinators"]) {
+          const coordinatorList = data["Student Coordinators"].split(";");
+          coordinatorData = coordinatorList.map((coordinator) => {
+            const parts = coordinator.trim().split(",");
+            return {
+              name: parts[0] || "",
+              position: parts[1] || "",
+              email: parts[2] || "",
+              phone: parts[3] || "",
+            };
+          });
+        }
+
+        // Process events and gallery
+        if (data["Events"]) {
+          const eventsList = data["Events"].split(";");
+          eventsData = [];
+          galleryData = [];
+
+          eventsList.forEach((event, index) => {
+            const parts = event.trim().split(",");
+            if (parts.length >= 4) {
+              const eventName = parts[0] || "";
+              const eventDate = parts[1] || "";
+              const eventDescription = parts[2] || "";
+              const eventImages = parts[3] ? parts[3].split(":") : [];
+
+              // Add event
+              eventsData.push({
+                id: `E${index + 1}`,
+                name: eventName,
+                date: eventDate,
+                description: eventDescription,
+                mainImage: eventImages[0] || "img/placeholder-event.jpg",
+              });
+
+              // Add gallery images for this event
+              eventImages.forEach((img, imgIndex) => {
+                galleryData.push({
+                  url: img || "img/placeholder-gallery.jpg",
+                  title: `${eventName} - Image ${imgIndex + 1}`,
+                  eventId: `E${index + 1}`,
+                });
+              });
+            }
+          });
+
+          // Update events count
+          clubData.eventsCount = eventsData.length || 15;
+        }
+      }
+
+      // Populate UI with data
+      function populateUI() {
+        // Populate club info
+        populateClubInfo();
+
+        // Populate faculty
+        populateFaculty();
+
+        // Populate coordinators
+        populateCoordinators();
+
+        // Populate events
+        populateEvents();
+
+        // Populate gallery
+        populateGallery();
+
+        // Create event modals
+        createEventModals();
+      }
+
+      // Populate club info
+      function populateClubInfo() {
+        // Set club logo
+        const logoElement = document.getElementById("club-logo");
+        logoElement.src = clubData.logo || "img/placeholder-logo.png";
+        logoElement.alt = `${clubData.name} Logo`;
+
+        // Set club name and tagline
+        document.getElementById("club-name").textContent = clubData.name;
+
+        // Extract first sentence as tagline if possible
+        // Extract first sentence as tagline if possible
+        let aboutText = clubData.about;
+        let tagline = aboutText;
+        const firstSentenceEnd = aboutText.indexOf(".");
+
+        if (firstSentenceEnd > 0) {
+          tagline = aboutText.substring(0, firstSentenceEnd + 1);
+          aboutText = aboutText.substring(firstSentenceEnd + 1).trim();
+        }
+
+        document.getElementById("club-tagline").textContent = tagline;
+        document.getElementById("club-lead").textContent = tagline;
+        document.getElementById("club-description").textContent = aboutText;
+
+        // Populate badges
+        const badgesContainer = document.getElementById("club-badges");
+        badgesContainer.innerHTML = `
+    <span class="custom-badge"><i class="fas fa-calendar-check"></i> Regular Events</span>
+    <span class="custom-badge"><i class="fas fa-users"></i> Open to All</span>
+    <span class="custom-badge"><i class="fas fa-certificate"></i> Recognized</span>
+`;
+      }
+
+      // Populate faculty section
+      function populateFaculty() {
+        const container = document.getElementById("faculty-container");
+        container.innerHTML = "";
+
+        facultyData.forEach((faculty) => {
+          const card = document.createElement("div");
+          card.className = "col-lg-4 col-md-6 mb-4";
+          card.innerHTML = `
+            <div class="faculty-card custom-card">
+                <div class="card-body text-center p-4">
+                    <img src="${
+                      faculty.image || "img/placeholder-profile.jpg"
+                    }" alt="${faculty.name}" class="faculty-img mb-3">
+                    <h5 class="card-title mb-1">${faculty.name}</h5>
+                    <p class="text-muted mb-3">${faculty.position}</p>
+                    <div class="contact-info justify-content-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>${faculty.email || "email@cspit.edu.in"}</span>
+                    </div>
+                    <div class="contact-info justify-content-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span>${faculty.phone || "N/A"}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+          container.appendChild(card);
+        });
+
+        // If no faculty data, show placeholder
+        if (facultyData.length === 0) {
+          container.innerHTML = `
+            <div class="col-12 text-center">
+                <p>No faculty advisors available.</p>
+            </div>
+        `;
+        }
+      }
+
+      // Populate coordinators section
+      function populateCoordinators() {
+        const container = document.getElementById("coordinator-container");
+        container.innerHTML = "";
+
+        coordinatorData.forEach((coordinator) => {
+          const card = document.createElement("div");
+          card.className = "col-lg-3 col-md-6 mb-4";
+          card.innerHTML = `
+            <div class="coordinator-card custom-card">
+                <div class="card-body text-center p-4">
+                    <img src="img/placeholder-student.jpg" alt="${
+                      coordinator.name
+                    }" class="coordinator-img mb-3">
+                    <h5 class="card-title mb-1">${coordinator.name}</h5>
+                    <p class="text-muted mb-3">${coordinator.position}</p>
+                    <div class="social-icons mb-3">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="contact-info justify-content-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>${coordinator.email || "N/A"}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+          container.appendChild(card);
+        });
+
+        // If no coordinator data, show placeholder
+        if (coordinatorData.length === 0) {
+          container.innerHTML = `
+            <div class="col-12 text-center">
+                <p>No student coordinators available.</p>
+            </div>
+        `;
+        }
+      }
+
+      // Populate events section
+      function populateEvents() {
+        const container = document.getElementById("events-container");
+        container.innerHTML = "";
+
+        // Show max 3 events
+        const eventsToShow = eventsData.slice(0, 3);
+
+        eventsToShow.forEach((event) => {
+          const card = document.createElement("div");
+          card.className = "col-lg-4 col-md-6 mb-4";
+          card.innerHTML = `
+            <div class="event-card custom-card">
+                <div class="event-img-container">
+                    <img src="${
+                      event.mainImage || "img/placeholder-event.jpg"
+                    }" alt="${event.name}" class="event-img">
+                    <div class="event-date-badge">${event.date || "TBA"}</div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">${event.name}</h5>
+                    <p class="card-text">${event.description.substring(
+                      0,
+                      100
+                    )}${event.description.length > 100 ? "..." : ""}</p>
+                    <button class="btn btn-view-details" data-bs-toggle="modal" data-bs-target="#eventModal-${
+                      event.id
+                    }">
+                        View Details <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+          container.appendChild(card);
+        });
+
+        // If no events data, show placeholder
+        if (eventsData.length === 0) {
+          container.innerHTML = `
+            <div class="col-12 text-center">
+                <p>No events available.</p>
+            </div>
+        `;
+        }
+      }
+
+      // Populate gallery section
+      function populateGallery() {
+        const container = document.getElementById("gallery-container");
+        container.innerHTML = "";
+
+        // Show max 6 gallery images
+        const galleryToShow = galleryData.slice(0, 6);
+
+        galleryToShow.forEach((item) => {
+          const galleryItem = document.createElement("div");
+          galleryItem.className = "col-lg-4 col-md-6";
+          galleryItem.innerHTML = `
+            <a href="${item.url}" data-lightbox="events-gallery" data-title="${item.title}" class="gallery-item">
+                <img src="${item.url}" alt="${item.title}" class="gallery-img">
+            </a>
+        `;
+          container.appendChild(galleryItem);
+        });
+
+        // If no gallery data, show placeholder
+        if (galleryData.length === 0) {
+          container.innerHTML = `
+            <div class="col-12 text-center">
+                <p>No gallery images available.</p>
+            </div>
+        `;
+        }
+      }
+
+      // Create event modals
+      function createEventModals() {
+        const container = document.getElementById("modals-container");
+        container.innerHTML = "";
+
+        eventsData.forEach((event) => {
+          // Find gallery images for this event
+          const eventImages = galleryData.filter(
+            (item) => item.eventId === event.id
+          );
+
+          const modal = document.createElement("div");
+          modal.className = "modal fade";
+          modal.id = `eventModal-${event.id}`;
+          modal.tabIndex = "-1";
+          modal.setAttribute("aria-labelledby", `eventModalLabel-${event.id}`);
+          modal.setAttribute("aria-hidden", "true");
+
+          let imagesHtml = "";
+          if (eventImages.length > 0) {
+            imagesHtml = `
+                <h5 class="mt-4 mb-3">Event Images</h5>
+                <div class="row">
+                    ${eventImages
+                      .map(
+                        (img) => `
+                        <div class="col-md-4 col-6 mb-3">
+                            <a href="${img.url}" data-lightbox="event-${event.id}" data-title="${img.title}">
+                                <img src="${img.url}" alt="${img.title}" class="img-fluid rounded">
+                            </a>
+                        </div>
+                    `
+                      )
+                      .join("")}
+                </div>
+            `;
+          }
+
+          modal.innerHTML = `
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalLabel-${
+                          event.id
+                        }">${event.name}</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <span class="badge bg-primary">${
+                              event.date || "TBA"
+                            }</span>
+                        </div>
+                        <img src="${
+                          event.mainImage || "img/placeholder-event.jpg"
+                        }" alt="${event.name}" class="img-fluid rounded mb-4">
+                        <p>${event.description}</p>
+                        ${imagesHtml}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-modal-close" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+          container.appendChild(modal);
+        });
+      }
+
+      // Initialize animations
+      function initializeAnimations() {
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+          mirror: false,
+        });
+
+        // Counter animation
+        const counterElements = document.querySelectorAll(".counter-value");
+
+        function startCounting() {
+          counterElements.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-count"));
+            const count = +counter.innerText;
+
+            // Check if element is in viewport
+            const rect = counter.getBoundingClientRect();
+            const isInViewport =
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+              rect.right <=
+                (window.innerWidth || document.documentElement.clientWidth);
+
+            if (isInViewport && count < target) {
+              const increment = Math.ceil(target / 50);
+              const newCount = Math.min(count + increment, target);
+              counter.innerText = newCount;
+
+              if (newCount < target) {
+                setTimeout(() => startCounting(), 50);
+              }
+            }
+          });
+        }
+
+        // Start counter when scrolled into view
+        window.addEventListener("scroll", startCounting);
+        startCounting(); // Initial check
+
+        // Registration button event
+        document
+          .getElementById("register-btn")
+          .addEventListener("click", function () {
+            alert("Registration functionality will be implemented soon!");
+          });
+      }
+
+      // Initialize lightbox
+      lightbox.option({
+        resizeDuration: 200,
+        wrapAround: true,
+        showImageNumberLabel: false,
+      });
+
+      // Hide loader when page is loaded
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("club-container").style.display = "block";
+
+          // Initialize the page
+          readExcelFile();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

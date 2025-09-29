@@ -1,0 +1,1174 @@
+@font-face {
+  font-family: "Mona-sans";
+  src: url("/fonts/Mona-Sans.woff2") format("opentype");
+}
+
+html,
+body {
+  overflow: visible;
+  background-color: #e1e1e1;
+  font-family: "Mona-sans", sans-serif !important;
+}
+.related-link-box ul li:not(:last-child).modal-footer {
+  justify-content: center;
+}
+.card-img-top-event {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+ .card {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.program-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#events .card-body {
+  justify-content: center;
+}
+
+
+
+.animate-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
+}
+
+
+.animate-visible:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  color: #3498db;
+}
+
+
+hr {
+  border-top: 2px solid #900c3f;
+}
+
+
+.tooltip-inner {
+  background-color: #801214;
+}
+
+
+.bootstrap-select .dropdown-menu {
+  max-height: inherit !important;
+  overflow: hidden !important;
+  min-width: 100% !important;
+}
+.bootstrap-select .dropdown-menu.inner {
+  max-height: 188px !important;
+  overflow-y: scroll !important;
+  padding-bottom: 10px !important;
+}
+.modal .custom-select {
+  padding: 1rem !important;
+}
+
+
+
+
+
+.nav-wrap {
+  top: 20px;
+}
+.fixed-top.navbar {
+ 
+  border-radius: 0;
+  transition: all 0.5s ease;
+}
+.navbar .nav-bg {
+  background: transparent;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+#navbarCollapse .nav-row-up .nav-link {
+  text-transform: none;
+}
+.navbar .navbar-brand img {
+  width: 80%;
+}
+.fixed-top.navbar .navbar-brand img {
+  width: 65%;
+}
+.ods-form textarea {
+  min-height: 222px !important;
+}
+map area {
+  outline: none;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 12px;
+  height: 12px;
+  transition: all ease-in-out 0.2s;
+}
+.banner-with-caption {
+  position: relative;
+}
+.banner-with-caption figcaption {
+  position: absolute;
+  right: 15%;
+  bottom: 10vh;
+  left: 5%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+.banner-with-caption figcaption h1 {
+  font-family: "Playfair-Bold";
+  color: white;
+  letter-spacing: 2px;
+  font-size: 3.5em;
+}
+.col-4.navbar-brand:before {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  content: "";
+  background-color: #f4f2ef;
+  left: 0;
+  top: 0;
+}
+.col-4.navbar-brand:after {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  content: "";
+  background-color: #801214;
+  right: 0;
+  top: 0;
+}
+.col-4.navbar-brand .logo-box-wrap {
+  z-index: 99;
+  position: relative;
+}
+.nav-row-down .nav-link.active {
+  background: none !important;
+  color: var(--site-color) !important;
+  position: relative;
+}
+.nav-row-down .nav-link.active:after {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: var(--site-color);
+}
+.about-blocks div {
+  margin-bottom: 30px;
+}
+
+.swiper-slide {
+  transition: all 0.7s ease;
+  opacity: 0.5;
+  filter: blur(1px);
+  transform: scale(0.85);
+  display: flex;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.swiper-slide-shadow {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.slider-items img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.media {
+  min-height: 120px;
+}
+
+
+.container-fluid.event-news-wrap {
+  padding: 0 20px;
+}
+
+.about-blocks div a {
+  background-color: var(--site-color);
+  padding: 30px;
+  color: #fff;
+  font-family: "Playfair-Bold";
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+}
+.about-blocks h4 {
+  margin-bottom: 0px;
+}
+.related-link-box ul li {
+  width: 49%;
+  display: inline-block;
+  border: none !important;
+}
+.related-link-box ul li:last-child {
+  border-bottom: 1px solid lightgray;
+}
+.accordion1 .card .card-header {
+  background: #c8a57d !important;
+  border: none !important;
+  border-bottom: 2px solid #fff !important;
+ 
+  font-size: 20px;
+  padding: 1rem 1.25rem !important;
+}
+.accordion1 .card .card-header .roman {
+  padding-left: 30px;
+}
+.accordion1 .card:nth-of-type(odd) .card-header {
+  background: #79747d !important;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+
+
+/****** Grid CSS ******/
+
+.span-2 {
+  grid-column-end: span 2;
+  grid-row-end: span 1;
+}
+.span-2-square {
+  grid-row-end: span 2;
+  grid-column-end: span 2;
+}
+.span-2-vertical {
+  grid-row-end: span 2;
+  grid-column-end: span 1;
+}
+.span-4 {
+  grid-column-end: span 4;
+  grid-row-end: span 2;
+}
+.span-4-1 {
+  grid-column-end: span 4;
+  grid-row-end: span 1;
+}
+
+
+
+section > .container-custom ul.pagination li.page-item:before {
+  display: none;
+}
+ul.pagination {
+  margin-bottom: 70px;
+}
+ul.pagination li.page-item a.page-link {
+  border-radius: 0px !important;
+  color: var(--site-color);
+  font-size: 15px;
+  padding: 9px 13px 8px;
+}
+ul.pagination li.page-item.active a.page-link {
+  background: var(--site-color);
+  color: #fff;
+  border: 1px solid var(--site-color);
+}
+ul.pagination li.page-item a.page-link:focus,
+ul.pagination li.page-item a.page-link:hover {
+  box-shadow: none;
+}
+
+
+.accordion-content h4 {
+  border-bottom: 0px solid;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.accordion-content h4 a {
+  float: right;
+  text-align: right;
+  color: var(--site-color);
+}
+
+.accordion-content div.borderBottom:after {
+  content: " ";
+  width: 100%;
+  display: block;
+  height: 2px;
+  background: #ccc;
+  margin: 30px 0 20px;
+}
+
+.accordion-content div.borderBottom:last-child:after {
+  height: 0px;
+}
+
+/****** Responsive CSS for Grid Layout ******/
+@media screen and (min-width: 870px) {
+  .grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+    grid-auto-rows: minmax(350px, auto);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(449px, 1fr));
+    grid-auto-rows: minmax(350px, auto);
+  }
+}
+@media screen and (min-width: 1251px) {
+  .grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    grid-auto-rows: minmax(350px, auto);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(350px, auto);
+  }
+}
+@media screen and (min-width: 1639px) {
+  .grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
+    grid-auto-rows: minmax(352px, auto);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .span-4-1 {
+    grid-column-end: span 2;
+    grid-row-end: span 1;
+  }
+  .odscard {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .grid-item,
+  .span-2,
+  .span-2-square,
+  .span-2-vertical,
+  .span-4 {
+    grid-column-end: span 4;
+    grid-row-end: span 1;
+  }
+  .search-icon {
+    padding-left: 0px;
+  }
+}
+/****** Grid CSS End ******/
+
+
+.social-icons a:first-child {
+  color: #333;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.social-icons .fab {
+  border: 1px solid #333;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 4px;
+}
+.social-icons .fa,
+.social-icons i {
+  border: 1px solid #333;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  vertical-align: middle;
+  padding: 4px;
+}
+.social-icons a:hover i,
+.social-icons a:focus i {
+  background: transparent;
+  border: none;
+  color: #801214;
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.social-icons a:first-child:hover i,
+.social-icons a:first-child:focus i {
+  background: none;
+  border: none;
+  color: #801214;
+}
+@media (max-width: 1999px) {
+  .carousel-caption .text-img2 {
+    width: 450px !important;
+  }
+  #homeTopSlider .item {
+    height: 100vh;
+  }
+  #homeTopSlider .item .video-bg-container {
+    height: 100%;
+  }
+  #homeTopSlider .item .video-bg-container .video-bg-player {
+    width: 110%;
+  }
+}
+
+@media (max-width: 1565px) {
+  section > .container-custom .content-details ul {
+    padding-left: 15px;
+  }
+  section > .container-custom .content-details ul li {
+    padding-left: 0px;
+    width: unset;
+  }
+  .carousel-caption .text-img2 {
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 1564px) {
+  section > .container-custom .content-details ul {
+    padding-left: 15px;
+  }
+  section > .container-custom .content-details ul li {
+    padding-left: 0px;
+    width: 33%;
+  }
+  .bg-color-add {
+    width: 52%;
+  }
+  .download-files .bg-site-color {
+    font-size: 16px;
+  }
+  .bg-color-add h2 {
+    font-size: 38px;
+  }
+  .admission-round h2 {
+    font-size: 28px;
+  }
+  .admission-round h3 {
+    font-size: 24px;
+  }
+  .arboretum-list-bg .media-body {
+    margin-left: 15px;
+  }
+  section.arboretum-list-bg .container-custom ul li {
+    padding-right: 10px;
+  }
+  section.arboretum-list-bg .container-custom ul li img {
+    width: 25px;
+  }
+  .arboretum-archive-details-main img {
+    width: 40px;
+  }
+}
+
+@media (max-width: 1399px) {
+  section > .container-custom .content-details ul {
+    padding-left: 0px;
+    margin-bottom: 0px;
+  }
+  section > .container-custom .content-details ul li {
+    padding-left: 15px;
+    width: unset;
+  }
+  section > .container-custom .content-details ul li h3 {
+    font-size: 16px;
+  }
+  .content-details p {
+    font-size: 12px;
+    line-height: 1;
+  }
+  .link-detail-more a {
+    font-size: 12px;
+  }
+  .content-details h1 {
+    font-size: 16px;
+  }
+  .bg-color-add {
+    width: 52%;
+  }
+  .download-files .bg-site-color {
+    font-size: 16px;
+  }
+  .bg-color-add h2 {
+    font-size: 38px;
+  }
+  .carousel-caption .text-img2 {
+    width: 300px !important;
+  }
+  #homeTopSlider .item {
+    height: 100vh;
+  }
+  #homeTopSlider .item .video-bg-container {
+    height: 100%;
+  }
+  #homeTopSlider .item .video-bg-container .video-bg-player {
+    width: 110%;
+  }
+  .admission-round h2 {
+    font-size: 28px;
+  }
+  .admission-round h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1366px) {
+  #homeTopSlider .item {
+    height: 100vh;
+    max-height: 800px;
+  }
+  #homeTopSlider .item .video-bg-container {
+    height: 100%;
+  }
+  #homeTopSlider .item .video-bg-container .video-bg-player {
+    width: 110%;
+  }
+  .sideform .animate-form form {
+    padding-top: 0px;
+  }
+  .sideform .scroll-form {
+    padding: 20px 30px;
+  }
+  .video-bg-container {
+    height: 100vh;
+  }
+  .arboretum-list-bg .media {
+    padding: 10px;
+  }
+  .arboretum-list-bg .media-body {
+    margin-left: 10px;
+  }
+  section.arboretum-list-bg .container-custom ul li {
+    padding-right: 10px;
+  }
+  section.arboretum-list-bg .container-custom ul li img {
+    width: 25px;
+  }
+  .arboretum-archive-details-main img {
+    width: 40px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1599px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .stepwell_main {
+    width: 100%;
+  }
+  .stepwell_listing ul li a {
+    font-size: 1.2rem;
+  }
+  .stepwell_details_more h3 {
+    font-size: 0.7rem;
+  }
+  .stepwell_inbox {
+    padding: 20px 0px 100px;
+  }
+  .stepwell_inbox form {
+    width: 50%;
+  }
+  .banner_subheading {
+    font-size: 2.3em;
+  }
+  .category_listing {
+    padding: 60px 20px 60px;
+  }
+  .bg_stepwell_details .hvr-sweep-to-right {
+    width: 50%;
+  }
+  .bg_stepwell_details {
+    padding: 20px;
+  }
+  .fixed_width {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .video-bg-player {
+    top: 50%;
+    left: 50%;
+    width: 134%;
+    height: 0;
+    padding-bottom: 75.25%;
+    transform: translate(-50%, -50%);
+   
+  }
+}
+
+@media (max-width: 1299px) {
+  .video-bg-container {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 1199px) {
+  .video-bg-container {
+    height: 88vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .video-bg-player {
+    width: 120%;
+  }
+  section > .container-custom .content-details ul {
+    padding-left: 0px;
+  }
+  section > .container-custom .content-details ul li {
+    padding-left: 15px;
+    width: unset;
+  }
+  section > .container-custom .content-details ul li h3 {
+    font-size: 16px;
+  }
+  .content-details p {
+    font-size: 12px;
+    line-height: 1.1;
+  }
+  .bg-color-add {
+    width: 60%;
+  }
+  .bg-color-add h2 {
+    font-size: 36px;
+  }
+  .admission-main-cls .tab-title.early-admission {
+    font-size: 22px;
+    margin-top: 0px;
+  }
+  .admission-round h3 {
+    font-size: 26px;
+  }
+  .admission-round h2 {
+    font-size: 34px;
+  }
+  .admission-round b {
+    font-size: 18px;
+  }
+  .admission-round p.start-admission {
+    font-size: 16px;
+  }
+  .admission-round .footer-dash button {
+    width: 250px;
+    max-width: 250px;
+  }
+  .download-files .bg-site-color {
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
+  .listing-campus a {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .admission-main-cls .tab-title {
+    margin-top: 0px;
+  }
+  .for-queries {
+    padding-left: 30px;
+  }
+  .carousel-caption .text-img2 {
+    width: 300px !important;
+  }
+  #homeTopSlider .item {
+    height: 65vh;
+  }
+  #homeTopSlider .item .video-bg-container {
+    height: 100%;
+  }
+  #homeTopSlider .item .video-bg-container .video-bg-player {
+    width: 110%;
+  }
+  section.arboretum-list-bg .container-custom ul li img {
+    width: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  #homeTopSlider .item {
+    height: 45vh;
+  }
+  .video-bg-container {
+    height: 50vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .alert_message {
+    width: 155px;
+  }
+  .footer_bottom_bg .admission-form {
+    width: 155px;
+    float: unset;
+  }
+  .footer-left-box div {
+    float: left;
+  }
+  .footer-dash {
+    width: 155px;
+  }
+  .footer_bottom_bg .admission-form .btn {
+    white-space: unset;
+  }
+  .stepwell_listing ul {
+    display: block;
+    margin-bottom: 85px;
+  }
+  .stepwell_listing ul li:first-child {
+    padding-left: 15px;
+  }
+  .stepwell_listing ul li {
+    border-right: none;
+    padding: 8px 15px;
+    width: 50%;
+    float: left;
+  }
+  .border-end {
+    border-right: none;
+  }
+  .stepwell_details {
+    padding-right: 0px;
+    margin-bottom: 3rem;
+  }
+  .stepwell_details_more {
+    padding-left: 0px;
+  }
+  .latest_news_bg .cards {
+    display: block;
+  }
+  .latest_news_bg .card {
+    margin: 0 0 3rem;
+    height: 90%;
+  }
+  .news_listing {
+    margin-bottom: 50px;
+  }
+  .stepwell_inbox form {
+    width: 65%;
+  }
+  .stepwell_inbox {
+    padding-top: 0px;
+  }
+  .stepwell_main {
+    width: 100%;
+  }
+  .banner_heading {
+    color: var(--site-color);
+    left: 85px;
+  }
+  .banner_subheading {
+    font-size: 32px;
+    top: 180px;
+    bottom: unset;
+    left: 220px;
+  }
+  .stepwell_listing {
+    padding-bottom: 20px;
+  }
+  .latest_news_bg {
+    padding-bottom: 0px !important;
+  }
+  .carousel-caption {
+    width: 100%;
+  }
+  .carousel-caption.home-page-carousel {
+    left: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+  }
+  .category_card {
+    padding: 0px 25px 40px;
+  }
+  .category_card h3 {
+    margin: 15px 0 0;
+  }
+  .category_listing {
+    padding: 30px 20px 60px;
+  }
+  .category_discription h3 {
+    margin: 10px 0px;
+  }
+  .bg_stepwell_details .hvr-sweep-to-right {
+    width: 50%;
+  }
+  .bg_stepwell_details {
+    padding: 20px;
+  }
+  .fixed_width {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .stepwell_newsletter_archives_details {
+    padding: 15px 0px 0px;
+  }
+  .bg-color-add {
+    position: relative;
+    width: 100%;
+    top: 0px;
+  }
+  .bg-color-add h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 991px) {
+  section > .container-custom .content-details ul {
+    padding-left: 0px;
+  }
+  section > .container-custom .content-details ul li {
+    padding-left: 15px;
+  }
+  .admission-carousel .carousel-caption {
+    bottom: 10%;
+  }
+  .for-queries {
+    padding-left: 15px;
+    padding-top: 35px;
+  }
+  .contact-details .form-wrap:before {
+    display: none;
+  }
+  .admission-main-cls .simple-button-plugin {
+    width: 200px;
+  }
+  
+  #homeTopSlider .item {
+    height: 45vh;
+  }
+  #homeTopSlider .item .video-bg-container {
+    height: 100%;
+  }
+  #homeTopSlider .item .video-bg-container .video-bg-player {
+    width: 110%;
+  }
+  .video-bg-container {
+    max-width: 100vw !important;
+    height: auto;
+    min-height: 460px;
+  }
+  .arboretum-archive-main {
+    margin-top: 50px;
+  }
+  .arboretum-list-bg .media {
+    padding: 10px;
+  }
+  .arboretum-list-bg .media-body {
+    margin-left: 10px;
+  }
+  section.arboretum-list-bg .container-custom ul li {
+    padding-right: 12px;
+  }
+  section.arboretum-list-bg .container-custom ul li img {
+    width: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer_bottom_bg .admission-form {
+    float: left;
+  }
+  .top_banner_bg {
+    margin: -150px 0px 20px !important;
+    padding: 180px 0px 40px;
+  }
+  .top_banner_bg img {
+    width: 300px;
+  }
+  .carousel-caption.home-page-carousel {
+    left: 5%;
+    right: 5%;
+  }
+  .carousel-caption .text-img2 {
+    width: 260px !important;
+  }
+  .stepwell_listing ul {
+    display: block;
+  }
+  .stepwell_listing ul li:first-child {
+    padding-left: 15px;
+  }
+  .stepwell_listing ul li {
+    border-right: none;
+    padding: 8px 15px;
+  }
+  .border-end {
+    border-right: none;
+  }
+  .stepwell_details {
+    padding-right: 0px;
+    margin-bottom: 3rem;
+  }
+  .stepwell_details_more {
+    padding-left: 0px;
+  }
+  .latest_news_bg .cards {
+    display: block;
+  }
+  .latest_news_bg .card {
+    margin: 3rem 0;
+  }
+  .stepwell_inbox form {
+    width: 80%;
+  }
+  .stepwell_inbox {
+    padding-top: 40px;
+  }
+  .stepwell_main {
+    width: 100%;
+  }
+  .banner_heading {
+    color: var(--site-color);
+    left: 45px;
+  }
+  .fixed_width {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .banner_subheading {
+    font-size: 32px;
+    bottom: 320px;
+    left: 20px;
+  }
+  .stepwell_listing {
+    padding-bottom: 0px;
+  }
+  .latest_news_bg {
+    padding-bottom: 0px !important;
+  }
+  .latest_news_bg .card {
+    height: 90%;
+  }
+  .stepwell_category_img {
+    padding: 30px 20px 50px;
+  }
+  .category_card {
+    padding: 25px 0px;
+  }
+  .stepwell_category_bg h2 {
+    font-size: 1.7rem;
+  }
+  .category_details {
+    padding: 20px 0 0;
+  }
+  .category_card h3 {
+    margin: 15px 0 0;
+  }
+  .category_listing {
+    padding: 30px 20px 60px;
+  }
+  .category_discription h3 {
+    margin: 10px 0px;
+  }
+  .bg_stepwell_details .hvr-sweep-to-right {
+    width: 70%;
+  }
+  .bg_stepwell_details {
+    padding: 20px;
+  }
+  .stepwell_newsletter_archives_details {
+    padding: 15px 0px 0px;
+  }
+  .fullscreen-video-background {
+    height: 55vh;
+  }
+  .fullscreen-video-background #_youtube-iframe-wrapper #_youtube-iframe {
+    height: 63vh;
+  }
+  .video-bg-player {
+    width: 320%;
+    height: 100%;
+  }
+  section > .container-custom .content-details ul {
+    padding-left: 0px;
+  }
+  section > .container-custom .content-details ul li {
+    padding-left: 15px;
+  }
+  .bg-color-add {
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    top: 0;
+  }
+  .bg-color-add h2 {
+    font-size: 23px;
+  }
+  .admission-main-cls .download-files .bg-site-color {
+    margin-bottom: 30px;
+  }
+  .admission-main-cls p.block-subhead {
+    padding-top: 8px;
+  }
+  .admission-main-cls .tab-title {
+    font-size: 24px;
+  }
+  .listing-campus a {
+    margin-bottom: 15px;
+  }
+  .contact-details .form-wrap:before {
+    display: none;
+  }
+  h3.admission-year {
+    margin-bottom: 25px;
+  }
+  .admission-round h2 {
+    font-size: 30px;
+    margin-bottom: 0px;
+  }
+  .admission-round b {
+    font-size: 18px;
+  }
+  .admission-round p.start-admission {
+    font-size: 16px;
+  }
+  .admission-main-cls .simple-button-plugin {
+    width: 200px;
+  }
+  #homeTopSlider .item {
+    height: 245px;
+  }
+  #homeTopSlider .item .video-bg-container {
+    height: 100%;
+  }
+  #homeTopSlider .item .video-bg-container .video-bg-player {
+    width: 120%;
+  }
+  .ig-admission-round {
+    margin-bottom: 40px;
+  }
+  .spkers {
+    padding: 30px 20px;
+  }
+  .placement-bg {
+    padding-right: 15px;
+  }
+  .video-bg-container {
+    max-width: 100vw !important;
+    height: auto;
+    min-height: 250px;
+  }
+  .mobi-view-order {
+    order: 2;
+  }
+  .mobi-view-order-sidebar {
+    order: 1;
+  }
+  .arboretum-archive-main {
+    margin-top: 30px;
+  }
+  .arboretum-list-bg .media-body {
+    margin-left: 10px;
+  }
+  section.arboretum-list-bg .container-custom ul li {
+    padding-right: 10px;
+  }
+  section.arboretum-list-bg .container-custom ul li img {
+    width: 25px;
+  }
+  .container-custom.ahmedabad-arboretum-list-details ul li {
+    padding-right: 5px;
+  }
+  .container-custom.ahmedabad-arboretum-list-details ul .badge-secondary {
+    padding: 5px;
+  }
+  .arboretum-archive-details-main img {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .fullscreen-video-background {
+    height: 60vh;
+  }
+  .fullscreen-video-background #_youtube-iframe-wrapper #_youtube-iframe {
+    height: 151vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .fullscreen-video-background {
+    height: 26vh;
+  }
+  .fullscreen-video-background #_youtube-iframe-wrapper #_youtube-iframe {
+    height: 93vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .fullscreen-video-background {
+    height: 80vh;
+  }
+  .fullscreen-video-background #_youtube-iframe-wrapper #_youtube-iframe {
+    width: 145vh;
+  }
+  #homeTopSlider .item {
+    height: 200px;
+  }
+}
+
+/****** Responsive CSS ******/
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1199px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media screen and (max-width: 991px) {
+  .top_banner_bg {
+    margin: -370px 0px 20px !important;
+    padding: 380px 0px 40px;
+  }
+  .blog-sidebar {
+    order: 3;
+  }
+  .schools-listing {
+    order: 2;
+  }
+}
+
+.top-link {
+  color: #fdfdfd !important;
+  background-color: #0056b3;
+  
+  font-weight:bold !important;
+  letter-spacing: 1px !important;
+}
+.top-link:hover {
+  color: #e8fd07 !important;
+}

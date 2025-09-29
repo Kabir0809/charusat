@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to bottom, #0066b3, #033c67);
+        color: #ffffff;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Back to Home link */
+      .back-home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #d9e2ec;
+        transition: color 0.3s ease;
+      }
+
+      .back-home:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
+      .coming-soon-container {
+        max-width: 600px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 40px;
+        color: #d9e2ec;
+        line-height: 1.5;
+      }
+
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        color: #9fb3c8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back to Home Link -->
+    <a href="index.html" class="back-home" onclick="goBackToHome()">← Back to Home</a>
+
+    <div class="coming-soon-container">
+      <h1>Coming Soon</h1>
+      <div class="brand">&mdash; CSPIT &mdash;</div>
+    </div>
+    <script>
+      function goBackToHome() {
+    // Redirect to home page
+    window.location.href = "index.html"; // Replace with your actual homepage URL
+
+    // Close the current tab
+    window.close();
+}
+    </script>
+  </body>
+</html>

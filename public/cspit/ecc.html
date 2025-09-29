@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Conservation Cell | CHARUSAT</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <link rel="icon" href="images1/logo.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- Font Awesome CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/offcanvas.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/vatsal-style.css" />
+    <style>
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #2081e9;
+        --accent-color: #f8961e;
+        --background-color: #e1e1e1;
+        --text-color: #333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header p {
+        font-size: 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      /* Navigation Styles */
+      .nav {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 15px 0;
+      }
+
+      .nav ul li {
+        margin: 0 15px;
+      }
+
+      .nav ul li a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .nav ul li a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+      }
+
+      /* Objectives Section */
+      .objectives-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .objective-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .objective-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .objective-card i {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+      }
+
+      .objective-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+
+      /* Members Section */
+      .members-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .member-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .member-card:hover {
+        transform: scale(1.05);
+      }
+
+      .member-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .member-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .member-card p {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .contact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-item i {
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      .contact-item a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .card-img-top {
+        padding: 10px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .card {
+        border-radius: 20px;
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2.5rem;
+        }
+
+        .header p {
+          font-size: 1.2rem;
+        }
+
+        .nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav ul li {
+          margin: 10px 0;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+
+      /* New styles for activities section */
+      .card {
+        transition: transform 0.3s ease-in-out;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; /* Ensure card takes full height */
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        background-color: var(--white);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Allows content to take available space */
+      }
+
+      .card-text {
+        flex-grow: 1; /* Pushes button to the bottom */
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        border-radius: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-top: auto; /* Pushes button to the bottom */
+      }
+    </style>
+
+    <!-- Navbar CSS -->
+    <style>
+      .subnav {
+        float: left;
+        overflow: hidden;
+      }
+
+      .subnav .subnavbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        padding: 14px 16px;
+        background-color: inherit;
+        margin: 0;
+      }
+
+      .subnav-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        background-color: var(--site-color);
+        width: 100%;
+        z-index: 1;
+        justify-content: center;
+        border: 0.5px solid #92a5b0;
+      }
+
+      .subnav-content a {
+        float: left;
+        color: white;
+        text-decoration: none;
+        /* padding: 16px 0;*/
+        font-size: 14px;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .subnav-content div {
+        padding: 0 16px;
+        position: relative;
+      }
+
+      .subnav-content div:not(:last-child):after {
+        content: "|";
+        color: white;
+        position: absolute;
+        right: -1.5px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .subnav-content a:hover:after {
+        background: white;
+      }
+
+      .subnav:hover > .subnav-content,
+      .subnav-content
+        > .dropdown-submenu.second-sub1:hover
+        .dropdown-menu.subnav-content {
+        display: flex;
+      }
+
+      .dropdown-menu.subnav-content {
+        padding: 0px;
+      }
+
+      .second-sub1:hover .second-sub-nav {
+        display: flex;
+        background-color: var(--site-color);
+      }
+
+      .subnav-dropdown-menu li {
+        list-style-type: none;
+      }
+
+      .subnav-unit-wrap .subnav-dropdown-menu li:first-child {
+        border-left: 0px;
+      }
+
+      .subnav-content {
+        text-align: center;
+        margin: 0px auto;
+        flex-direction: column;
+      }
+
+      .subnav-unit-wrap {
+        display: flex;
+        width: 100%;
+        padding: 0;
+      }
+
+      .subnav-unit {
+        flex-grow: 1;
+        flex-basis: 0;
+        border-right: 0.5px solid var(--secondary-color-border);
+        border-bottom: 0.5px solid var(--secondary-color-border);
+        align-self: center;
+        /* padding: 16px; */
+        height: 72px;
+        display: flex;
+        align-items: center;
+        padding: 0px 5px;
+      }
+
+      .subnav-unit-wrap li:first-child {
+        border-left: 0.05px solid var(--secondary-color-border);
+      }
+
+      .subnav-unit-wrap .subnav-link span {
+        border-bottom: 5px solid var(--site-color) !important;
+      }
+
+      .subnav-unit-wrap .subnav-link:hover span,
+      .subnav-unit-wrap .subnav-link.active span {
+        border-bottom: 5px solid #fff !important;
+      }
+
+      .subnav-unit-wrap.sub {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .quick-links a {
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <!-- navbar -->
+      <div class="nav-wrapper d-none d-lg-block">
+        <nav
+          id="navbar_top"
+          class="navbar navbar-expand-lg border-bottom-0 nav-bg navbar-cont"
+          style="color: #0c4da2"
+        >
+          <div
+            class="container-fluid align-items-stretch navbar"
+            style="border-bottom: 2px solid var(--secondary-color-border)"
+          >
+            <div class="col-2 navbar-brand m-0 text-center">
+              <div
+                class="logo-box-wrap"
+                style="position: relative; display: inline-block"
+              >
+                <a href="index.html">
+                  <img
+                    src="images1/CSPIT_Logo.png"
+                    class="nav-logo"
+                    alt="CSPIT Logo"
+                    style="
+                      width: 70px;
+                      box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.9),
+                        6px 6px 10px rgba(0, 0, 0, 0.3);
+                      padding: 4px;
+                    "
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+            </div>
+  
+            <div class="navbar col-10 px-0 nav-bg">
+              <button
+                class="navbar-toggler my-2"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarCollapse"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse flex-column align-items-start ml-0"
+                id="navbarCollapse"
+              >
+                <ul
+                  class="quick-links navbar-nav nav-sub justify-content-end mx-auto nav-row-up"
+                >
+                  <li class>
+                    <a class="nav-link py-0 px-4 top-link" href="index.html#placement">
+                      Placement
+                    </a>
+                  </li>
+                  <li class>
+                    <a class="nav-link py-0 px-4 top-link" href="#gallery">
+                      Gallery
+                    </a>
+                  </li>
+                  <li class>
+                    <a
+                      class="nav-link py-0 px-4 top-link"
+                      href="./news-letter-Dec-Mar-2025"
+                      target="_blank"
+                    >
+                      Newsletter
+                    </a>
+                  </li>
+                  <li class>
+                    <a
+                      class="nav-link py-0 px-4 top-link"
+                      href="https://www.charusat.ac.in/scholarship"
+                      target="_blank"
+                    >
+                      Scholarships
+                    </a>
+                  </li>
+                  <li class>
+                    <a
+                      class="nav-link py-0 px-4 top-link"
+                      href="./faculty.html"
+                      target="_blank"
+                    >
+                      Faculty & Staff
+                    </a>
+                  </li>
+                  <li class>
+                    <a
+                      class="nav-link py-0 px-4 top-link"
+                      href="https://alumni.charusat.ac.in/"
+                      target="_blank"
+                    >
+                      Alumni
+                    </a>
+                  </li>
+                  <li class>
+                    <a class="nav-link py-0 px-4 top-link" href="#contact-us">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav flex-row mx-auto nav-row-down nav-main">
+                  <li class="nav-item subnav">
+                    <a
+                      class="nav-link py-0 subnavbtn"
+                      href="./about_us.html"
+                      target="_blank"
+                      >About Us</a
+                    >
+                    <!-- <a class="nav-link py-0 subnavbtn" href="about_us.html" target="_blank">About Us</a> -->
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href>Academics</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#under-graduate-programs"
+                          >
+                            <span>Undergraduate Programs (B. Tech) </span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link subnav-link text-uppercase"
+                            href="#post-graduate-programs"
+                            ><span>Postgraduate Programs (M. Tech) </span></a
+                          >
+                        </li>
+  
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://www.charusat.ac.in/assets/files/PHD/PhD_Regulations.pdf"
+                            target="_blank"
+                            ><span>Ph.D.</span></a
+                          >
+                        </li>
+                        <!-- <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://www.charusat.ac.in/course-single#PGDEAMT"
+                            target="_blank"
+                          >
+                            <span>PGP</span>
+                          </a>
+                        </li> -->
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href>Centres</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/CREDP"
+                            target="_blank"
+                            ><span>Rural Education Development</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/wdc"
+                            target="_blank"
+                            ><span>WOMEN DEVELOPMENT CELL</span></a
+                          >
+                        </li>
+  
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/csic"
+                            target="_blank"
+                            ><span>Startup and Innovation Centre</span></a
+                          >
+                        </li>
+  
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/eoc"
+                            target="_blank"
+                            ><span>Equal Opportunity Cell</span></a
+                          >
+                        </li>
+  
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/university-industry-interaction-cell"
+                            target="_blank"
+                            ><span>Industry Interaction Cell</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://isc.charusat.ac.in/"
+                            target="_blank"
+                            ><span>International Student Cell</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="./ecc.html"
+                            target="_blank"
+                            ><span>Energy Conservation Cell</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href>Committees</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/cspit/Grievance-Redressal-CSPIT.html"
+                            target="_blank"
+                          >
+                            <span>Grievance Redressal</span>
+                          </a>
+                        </li>
+                        <!-- <li class="subnav-unit dropdown-submenu second-sub2">
+                        <a class="subnav-link text-uppercase" href="https://www.charusat.ac.in/anti-ragging"
+                          target="_blank"><span>Anti-Ragging</span></a>
+                      </li> -->
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://www.charusat.ac.in/cspit/Anti-Ragging-Squad.html"
+                            target="_blank"
+                            ><span>Anti-Ragging Squad</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="text-uppercase subnav-link"
+                            href="https://www.charusat.ac.in/ICC"
+                            target="_blank"
+                            ><span>Internal Complaint Committee</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="./Resources/Anti.drug.circular.pdf"
+                            target="_blank"
+                            ><span>Anti-Drug</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+  
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href>Research</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="research_facilities1.html"
+                            target="_blank"
+                          >
+                            <span>Research Labs / Sophisticated Instruments</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="research_project.html"
+                            target="_blank"
+                            ><span>Research Projects</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+  
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href>Student Corner</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://www.charusat.ac.in/documents/pdfs/data_1/Code_Of_Conduct/Student%20code%20of%20Conduct.pdf"
+                            target="_blank"
+                          >
+                            <span>Code Of Conduct</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <!-- href="https://drive.google.com/drive/folders/1LgF2k8N_GeRCs-O50PvXUiywW-Bk8Lyw" -->
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="drive.html?folderId=1LgF2k8N_GeRCs-O50PvXUiywW-Bk8Lyw&heading=STUDENT%20HANDBOOK"
+                            target="_blank"
+                          >
+                            <span>Student Handbook </span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="drive.html?folderId=1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2&heading=SYLLABUS"
+                            target="_blank"
+                          >
+                            <span>Syllabus</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.edu.in:912/OthPaymentApp/"
+                            target="_blank"
+                          >
+                            <span>Request Transcript</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.edu.in:912/FeesPaymentApp/"
+                            target="_blank"
+                          >
+                            <span>Pay Fees</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.edu.in:912/Uniexamresult/"
+                            target="_blank"
+                          >
+                            <span>View Result</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://icreate.charusat.ac.in/"
+                            target="_blank"
+                          >
+                            <span>i-create</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <!-- href="https://drive.google.com/drive/u/1/folders/1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW" -->
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="drive.html?folderId=1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW&heading=QUESTION%20PAPERS"
+                            target="_blank"
+                          >
+                            <span>Question Papers</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <!-- href="https://drive.google.com/drive/folders/1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ" -->
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="drive.html?folderId=1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ&heading=ACADEMIC%20CALENDER"
+                            target="_blank"
+                            ><span>Academic Calender</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit">
+                          <!-- href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2" -->
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="./Resources/student_support_policy_UGSF_PGSF.pdf"
+                            target="_blank"
+                          >
+                            <span>Student Support Policy</span>
+                          </a>
+                        </li>
+  
+                        <!-- <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO"
+                            target="_blank"
+                          >
+                            <span>Downloads</span>
+                          </a>
+                        </li> -->
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Searchh -->
+      <div class="container-fluid d-block d-lg-none">
+        <div class="row">
+          <div class="col-9">
+            <div class="navbar-brand m-0 p-0">
+              <a href="/">
+                <div class="logo-box-wrap">
+                  <img
+                    src="./images1/CSPIT_Logo.png"
+                    class="nav-logo mobile-nav-logo"
+                    loading="lazy"
+                    alt
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-3 d-flex justify-content-center hamburger-wrap">
+            <!-- <div class="search-icon">
+              <a class="pr-4" href="#"
+                ><i
+                  onclick="javascript:$('.search-block').show();"
+                  class="fa fa-search"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </div> -->
+            <div class="mx-auto bar-wrap">
+              <button
+                class="navbar-toggler p-0 border-0"
+                type="button"
+                data-toggle="offcanvas"
+              >
+                <span class="bar mt-0"></span><span class="bar"></span
+                ><span class="bar"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  SIDEBAR -->
+      <nav
+        class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark d-block d-lg-none"
+      >
+        <div
+          class="navbar-collapse offcanvas-collapse"
+          id="navbarsExampleDefault"
+        >
+          <div class="row">
+            <div class="col-9">
+              <div class="navbar-brand m-0 p-0">
+                <div class="logo-box-wrap blue-back">
+                  <img
+                    src="./images1/logo.webp"
+                    class="nav-logo mobile-nav-logo"
+                    style="width: 50px"
+                    loading="lazy"
+                    alt
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-3 d-flex justify-content-center hamburger-wrap">
+              <div class="mx-auto bar-wrap">
+                <button
+                  class="navbar-toggler p-0 border-0"
+                  type="button"
+                  data-toggle="offcanvas"
+                >
+                  <span class="bar mt-0"></span><span class="bar"></span
+                  ><span class="bar"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <ul class="navbar-nav mr-auto" style="color: #0c4da2">
+              <li class="nav-item">
+                <a class="nav-link" href="#placement">Placement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://www.charusat.ac.in/scholarship"
+                  >Scholarships</a
+                >
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link" href="./faculty.html" target="_blank"
+                  >Faculty & staff</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://alumni.charusat.ac.in/"
+                  >Alumni</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact-us">Contact Us </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about_us.html">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="JavaScript:Void(0);"
+                  id="academics"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  target="academics-dropdown"
+                  >Academics</a
+                >
+                <!-- <a class="nav-link dropdown-toggle" href="#" id="academics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Academics</a> -->
+                <div class="dropdown-menu" id="academics-dropdown">
+                  <a class="dropdown-item" href="#under-graduate-programs"
+                    >Undergraduate Programs</a
+                  >
+                  <a class="dropdown-item" href="#post-graduate-programs"
+                    >Postgraduate Programmes</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/assets/files/PHD/PhD_Regulations.pdf"
+                    >PH.D.</a
+                  >
+                </div>
+                <!-- <a class="dropdown-item" href="/academics/libraries/">Libraries</a>
+                  <a class="dropdown-item" href="/academics/interdisciplinary-learning/">Interdisciplinary Learning</a>
+                  <a class="dropdown-item" href="/academics/academic-calendar-2024-25/">Academic Calendar 2024-25</a> -->
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="JavaScript:Void(0);"
+                  id="admission"
+                  target="committees-dropdown"
+                  >Committees</a
+                >
+                <div class="dropdown-menu" id="committees-dropdown">
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/cspit/Anti-Ragging-Squad.html"
+                    >Anti-Ragging Squad</a
+                  >
+                  <a class="dropdown-item" href="https://www.charusat.ac.in/ICC"
+                    >Internal Complaint Committee</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="./Resources/Anti.drug.circular.pdf"
+                    >Anti-drug</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="/faculty/"
+                  href="JavaScript:Void(0);"
+                  target="centres-dropdown"
+                  >Centres</a
+                >
+                <div class="dropdown-menu" id="centres-dropdown">
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/cspit/Grievance-Redressal-CSPIT.html"
+                    target="_blank"
+                    >Grievance Redressal</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/CREDP"
+                    target="_blank"
+                    >Rural Education Development</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/wdc"
+                    target="_blank"
+                    >Women Development Cell</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/csic"
+                    target="_blank"
+                    >Startup and Innovation Centre</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/eoc"
+                    target="_blank"
+                    >Equal Opportunity Cell</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/university-industry-interaction-cell"
+                    target="_blank"
+                    >Industry Interaction Cell</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://isc.charusat.ac.in/"
+                    target="_blank"
+                    >International Student Cell</a
+                  >
+                  <a class="dropdown-item" href="./ecc.html" target="_blank"
+                    >Energy Conservation Cell</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="JavaScript:Void(0);"
+                  target="research-dropdown"
+                  >Research</a
+                >
+                <div class="dropdown-menu" id="research-dropdown">
+                  <a class="dropdown-item" href="./research_facilities1.html"
+                    >Research Labs / Sophisticated Instruments</a
+                  >
+                  <a class="dropdown-item" href="./research_project.html"
+                    >Research Projects</a
+                  >
+                </div>
+              </li>
+  
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="JavaScript:Void(0);"
+                  target="studentCorner-dropdown"
+                  >Student Corner</a
+                >
+                <div class="dropdown-menu" id="studentCorner-dropdown">
+                  <a
+                    class="dropdown-item"
+                    href="https://www.charusat.ac.in/documents/pdfs/data_1/Code_Of_Conduct/Student%20code%20of%20Conduct.pdf"
+                    target="_blank"
+                    >Code of Conduct</a
+                  >
+  
+                  <!-- <a class="dropdown-item" href="drive.html?folderId=1LgF2k8N_GeRCs-O50PvXUiywW-Bk8Lyw&heading=STUDENT%20HANDBOOK" target="_blank">Student Handbook</a> -->
+                  <a
+                    class="dropdown-item"
+                    href="drive.html?folderId=1LgF2k8N_GeRCs-O50PvXUiywW-Bk8Lyw&heading=STUDENT%20HANDBOOK"
+                    target="_blank"
+                    >Student Handbook</a
+                  >
+  
+                  <a
+                    class="dropdown-item"
+                    href="drive.html?folderId=1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2&heading=SYLLABUS"
+                    target="_blank"
+                    >Syllabus</a
+                  >
+  
+                  <a
+                    class="dropdown-item"
+                    href="https://charusat.edu.in:912/OthPaymentApp/"
+                    target="_blank"
+                    >Request Transcript</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://charusat.edu.in:912/FeesPaymentApp/"
+                    target="_blank"
+                    >Pay Fees</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://charusat.edu.in:912/Uniexamresult/"
+                    target="_blank"
+                    >View Result</a
+                  >
+  
+                  <a
+                    class="dropdown-item"
+                    href="https://icreate.charusat.ac.in/"
+                    target="_blank"
+                    >I-create</a
+                  >
+  
+                  <a
+                    class="dropdown-item"
+                    href="drive.html?folderId=1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW&heading=QUESTION%20PAPERS"
+                    target="_blank"
+                    >Question Papers</a
+                  >
+  
+                  <a
+                    class="dropdown-item"
+                    href="drive.html?folderId=1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ&heading=ACADEMIC%20CALENDER"
+                    target="_blank"
+                    >Academic Calendar</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="drive.html?folderId=1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2&heading=ACADEMIC%20REGULATION"
+                    target="_blank"
+                    >Academic Regulation</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- /navbar -->
+    </section>
+    <!-- Sidebar -->
+    <script src="./js/sidemenu.js"></script>
+
+    <header class="header">
+      <div class="container">
+        <h1>Energy Conservation Cell</h1>
+        <p>CHARUSAT - Empowering Sustainability Through Innovation</p>
+      </div>
+    </header>
+
+    <section id="objectives" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Objectives</h2>
+        <div class="objectives-grid">
+          <div class="objective-card">
+            <i data-feather="zap"></i>
+            <h3>Promote Energy Conservation</h3>
+            <p>
+              Spread awareness about energy-saving measures and their
+              importance.
+            </p>
+          </div>
+          <div class="objective-card">
+            <i data-feather="users"></i>
+            <h3>Workshops & Seminars</h3>
+            <p>
+              Engage students and staff in interactive energy-saving activities
+              and discussions.
+            </p>
+          </div>
+          <div class="objective-card">
+            <i data-feather="sun"></i>
+            <h3>Non-Conventional Energy</h3>
+            <p>
+              Maximize energy generation using renewable sources and promote
+              sustainable practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="members" class="section">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="members-grid">
+          <div class="member-card">
+            <img
+              src="./CSPIT_Faculty/Electrical/NILAYKUMAR.webp "
+              alt="Dr. Nilay Patel"
+            />
+            <h3>Dr. Nilay Patel</h3>
+            <p>Head of Electrical Engineering</p>
+            <p><strong>Role:</strong> Workshops, Feasibility Studies</p>
+          </div>
+          <!-- Add more member cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Activities</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images1/ECC/solar.png"
+                class="card-img-top"
+                alt="Solar Power Initiative"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <strong>Solar Power Plant Initiative</strong>
+                </h5>
+                <p class="activity-card-text">
+                  Total capacity of 990 KW installed at CHARUSAT campus.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activityModal"
+                  data-activity="solar"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images1/ECC/poster.jpg"
+                class="card-img-top"
+                alt="Annual Workshops"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <strong>Annual Poster-Making Competition</strong>
+                </h5>
+                <p class="activity-card-text">
+                  Energy Conservation Cell organized poster making competition
+                  on National Energy Conservation Day .
+                </p>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activityModal"
+                  data-activity="workshops"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images1/ECC/play.png"
+                class="card-img-top"
+                alt="Energy Audits"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <strong>Energy Conservation Day Play</strong>
+                </h5>
+                <p class="activity-card-text">
+                  A play was performed by students of the Electrical Engineering
+                  Department to raise awareness about National Energy
+                  Conservation Day.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activityModal"
+                  data-activity="audits"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images1/ECC/cons1.jpg"
+                class="card-img-top"
+                alt="Green Building Initiatives"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <strong>Energy Conservation Workshops</strong>
+                </h5>
+                <p class="activity-card-text">
+                  Organized annually for CHARUSAT Stakeholders aiming to
+                  increase understanding of energy conservation and
+                  energy-saving techniques.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activityModal"
+                  data-activity="green"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images1/ECC/solarproject.jpg"
+                class="card-img-top"
+                alt="Student Projects"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <strong>Solar Workshop for Students</strong>
+                </h5>
+                <p class="activity-card-text">
+                  Conducted to create awareness among students about solar
+                  panel-based projects focusing on the development and use of
+                  solar technologies.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activityModal"
+                  data-activity="projects"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images1/ECC/cons1.jpg"
+                class="card-img-top"
+                alt="Community Outreach"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <strong>LED Lighting Initiatives</strong>
+                </h5>
+                <p class="activity-card-text">
+                  LED Lighting Initiatives for replacement of conventional
+                  lighting with LED technology in classrooms.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#activityModal"
+                  data-activity="outreach"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="activityModal"
+      tabindex="-1"
+      aria-labelledby="activityModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="activityModalLabel">
+              Activity Details
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Content will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i data-feather="user"></i>
+            <p>Dr. Nilay Patel, Head of Electrical Engineering</p>
+          </div>
+          <div class="contact-item">
+            <i data-feather="mail"></i>
+            <a href="mailto:nilaypatel.ee@charusat.ac.in"
+              >nilaypatel.ee@charusat.ac.in</a
+            >
+          </div>
+          <div class="contact-item">
+            <i data-feather="phone"></i>
+            <a href="tel:+911234567890">+91 123 456 7890</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <footer
+      class="footer-bs text-white container-fluid pt-40 pb-0 footer_bottom_bg"
+    >
+      <div class="container-custom mx-auto">
+        <div class="row">
+          <div
+            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 footer-brand animated fadeInLeft"
+            style="text-align: center"
+          >
+            <img
+              class="img-fluid mb-4 bg-white p-2"
+              src="images1/CSPIT_Logo.png"
+              style="
+                width: 150px;
+                height: auto;
+                box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.9),
+                  6px 6px 10px rgba(0, 0, 0, 0.3);
+              "
+              loading="lazy"
+              alt="Institute Logo"
+            />
+
+            <h5 style="font-weight: bold">
+              CHANDUBHAI S. PATEL <br />
+              INSTITUTE OF TECHNOLOGY
+            </h5>
+
+            <!-- Centered Charusat Logo -->
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px auto 0 auto;
+                width: 100%;
+                margin-bottom: 20px;
+              "
+            >
+              <img
+                src="./images1/charusatlogo.png"
+                alt="Charusat Logo"
+                style="
+                  width: 300px;
+                  height: auto;
+                  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.7),
+                    inset -2px -2px 5px rgba(255, 255, 255, 0.8),
+                    4px 4px 30px rgba(0, 0, 0, 0.5);
+                "
+              />
+              <br />
+            </div>
+          </div>
+
+          <div
+            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 py-xs-2 py-2 quick-links-nav"
+          >
+            <div class="quick-links col-md-12 pl-0 text-lg-left text-xl-center">
+              <ul
+                class="list-unstyled text-left d-inline-block"
+                style="text-align: left"
+              >
+                <li>
+                  <h5 style="color: #ffcc00; font-weight: bold">Quick Links</h5>
+                </li>
+                <li>
+                  <a
+                    class="hvr-underline-from-left"
+                    href="https://www.charusat.ac.in/cspit/files/CSPIT_Mandatory%20Disclosure_2023-24.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Mandatory Disclosure</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hvr-underline-from-left"
+                    onclick="openCustomPopup('customPopupNIRF')"
+                    rel="noopener noreferrer"
+                    >NIRF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hvr-underline-from-left"
+                    onclick="openCustomPopup('customPopupAICTE')"
+                    rel="noopener noreferrer"
+                    >AICTE EOA</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="hvr-underline-from-left"
+                    onclick="openCustomPopup('customPopupFeedback')"
+                    rel="noopener noreferrer"
+                    >Feedback Analysis and Action Taken Report</a
+                  >
+                </li>
+                <!-- <li>
+                      <a class="hvr-underline-from-left" href="">Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a class="hvr-underline-from-left" href="">Sitemap</a>
+                    </li> -->
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 py-2 py-sm-0 footer-left-box quick-links mb-2 mb-sm-0 text-xl-left"
+          >
+            <ul class="list-unstyled text-left d-inline-block mb-0 py-2">
+              <li id="contact-us">
+                <h5 style="color: #ffcc00; font-weight: bold">Contact Us</h5>
+              </li>
+              <li>
+                <p class="mb-2">
+                  <i
+                    class="fas fa-phone-alt"
+                    style="color: #ffcc00; margin-right: 10px"
+                  ></i>
+                  +91-2697-265112
+                </p>
+              </li>
+              <li>
+                <p>
+                  <i
+                    class="fas fa-envelope"
+                    style="color: #ffcc00; margin-right: 10px"
+                  ></i>
+                  principal.cspit@charusat.ac.in
+                </p>
+              </li>
+              <li>
+                <p class="mb-1">
+                  <i
+                    class="fas fa-map-marker-alt"
+                    style="color: #ffcc00; margin-right: 10px"
+                  ></i>
+                  Off. Nadiad-Petlad Highway,
+                  <br />Changa-388421, Anand, Gujarat, India
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 pt-2 py-sm-0 float-md-right justify-content-center footer-left-box"
+          >
+            <h5 style="color: #ffcc00; font-weight: bold">Location</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.41961737984!2d72.81767727475798!3d22.60080043193719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c699400001%3A0xb50162f2acb04c04!2sCSPIT%20(CE%2FIT)!5e0!3m2!1sen!2sin!4v1729709960389!5m2!1sen!2sin"
+              width="100%"
+              height="190"
+              style="border: 0"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+            <p class="footer-text-sm">Visit us at our campus in Changa.</p>
+          </div>
+        </div>
+        <div
+          class="row mx-0 footer-social-wrap"
+          style="border-top: 1px solid white"
+        >
+          <div class="py-3 col-sm-7 pl-0">
+            <span class="copyright footer-text-sm float-md-left"
+              >&#169;Copyright CSPIT- CHARUSAT | All rights reserved</span
+            >
+          </div>
+          <div class="py-3 col-sm-5 pr-0">
+            <div
+              class="social-icons-wrap float-sm-right"
+              style="text-align: right"
+            >
+              <ul class="social-network social-circle list-unstyled d-inline">
+                <li>
+                  <a
+                    href="https://www.facebook.com/people/Cspit-Charusat/pfbid0XnpDeADufmh2SmRWAq2tWZmSvyJSsgVqRH5YTicU8Y6vo9qGvyCMNTGdkt7qxsLvl/"
+                    class="icoFacebook"
+                    title="Facebook"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/school/chandubhai-s.-patel-institute-of-technology/?originalSubdomain=in"
+                    class="icoFacebook"
+                    title="LinkedIN"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/cspit_charusat/"
+                    class="icoFacebook"
+                    title="Instagram"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/thecharusat?lang=en"
+                    class="icoFacebook"
+                    title="Twitter"
+                    target="_blank"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <section>
+      <!-- AICTE EOA and NIRF Popup Containers -->
+      <!-- NIRF Popup -->
+      <div id="customPopupNIRF" class="custom-modal">
+        <div class="custom-modal-content">
+          <span
+            class="custom-close-btn"
+            onclick="closeCustomPopup('customPopupNIRF')"
+            >&times;</span
+          >
+          <h3 class="custom-modal-main-heading">
+            National Institute Ranking Framework (NIRF)
+          </h3>
+          <hr />
+          <h5 class="custom-modal-sub-heading">Reports:</h5>
+          <ul class="custom-modal-links">
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2025
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2024
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2023.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2023
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://charusat.edu.in/iqac/nirf/NIRF2022/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2022
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://charusat.edu.in/iqac/nirf/NIRF2021/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2021
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://charusat.edu.in/iqac/nirf/NIRF2020/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2020
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://charusat.edu.in/iqac/nirf/NIRF2019/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2019
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://charusat.edu.in/iqac/nirf/NIRF2018/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NIRF Report 2018
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AICTE Popup -->
+      <div id="customPopupAICTE" class="custom-modal">
+        <div class="custom-modal-content">
+          <span
+            class="custom-close-btn"
+            onclick="closeCustomPopup('customPopupAICTE')"
+            >&times;</span
+          >
+          <h3 class="custom-modal-main-heading">
+            All India Council for Technical Education (AICTE)
+          </h3>
+          <hr />
+          <h5 class="custom-modal-sub-heading">Reports:</h5>
+          <ul class="custom-modal-links">
+            <li>
+              <a
+                href="./files/EOA-Report-2025-26.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2025-2026
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/EOA-Report-2024-2025.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2024-2025
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/EOA-Report-2023-2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2023-2024
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/EOA-Report-2022-2023.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2022-2023
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/2021-2022.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2021-2022
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.charusat.ac.in/cspit/files/2020-2021.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2020-2021
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://charusat.ac.in/cspit/files/2019-2020.PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AICTE EOA Report 2019-2020
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="customPopupFeedback" class="custom-modal">
+        <div class="custom-modal-content">
+          <span
+            class="custom-close-btn"
+            onclick="closeCustomPopup('customPopupFeedback')"
+            >&times;</span
+          >
+          <h3 class="custom-modal-main-heading">
+            Feedback Analysis and Action Taken Report
+          </h3>
+          <hr />
+          <!-- <h5 class="custom-modal-sub-heading">Reports:</h5> -->
+          <ul class="custom-modal-links">
+            <li class="department-item">
+              <span class="department-name">Information Technology</span>
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+            <li class="department-item">
+              <span class="department-name">Civil Engineering</span>
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+            <li class="department-item">
+              <span class="department-name"
+                >Electronics & Communication Engineering</span
+              >
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+            <li class="department-item">
+              <span class="department-name">Mechanical Engineering</span>
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+            <li class="department-item">
+              <span class="department-name">Computer Engineering</span>
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+            <li class="department-item">
+              <span class="department-name">Electrical Engineering</span>
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+            <li class="department-item">
+              <span class="department-name"
+                >Computer Science and Engineering</span
+              >
+              <span class="department-links">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  2023-2024
+                </a>
+                <!-- <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                    2022-2023
+                  </a> -->
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- ACTIVTY MODAL POPUP -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const activityModal = document.getElementById("activityModal");
+        const modalTitle = activityModal.querySelector(".modal-title");
+        const modalBody = activityModal.querySelector(".modal-body");
+
+        activityModal.addEventListener("show.bs.modal", function (event) {
+          const button = event.relatedTarget;
+          if (!button) return;
+
+          const activity = button.getAttribute("data-activity");
+
+          // Matching the content exactly as per the Activity Section
+          const activityDetails = {
+            solar: {
+              title: "Solar Power Plant Initiative",
+              content: "Total capacity of 990 KW installed at CHARUSAT campus.",
+            },
+            workshops: {
+              title: "Annual Poster-Making Competition",
+              content:
+                "Energy Conservation Cell organized a poster-making competition on National Energy Conservation Day.",
+            },
+            audits: {
+              title: "Energy Conservation Day Play",
+              content:
+                "A play was performed by students of the Electrical Engineering Department to raise awareness about National Energy Conservation Day.",
+            },
+            green: {
+              title: "Energy Conservation Workshops",
+              content:
+                "Organized annually for CHARUSAT stakeholders, aiming to increase understanding of energy conservation and energy-saving techniques.",
+            },
+            projects: {
+              title: "Solar Workshop for Students",
+              content:
+                "Conducted to create awareness among students about solar panel-based projects, focusing on the development and use of solar technologies.",
+            },
+            outreach: {
+              title: "LED Lighting Initiatives",
+              content:
+                "LED Lighting Initiatives for replacement of conventional lighting with LED technology in classrooms.",
+            },
+          };
+
+          // Check if the activity exists in the object
+          if (activityDetails[activity]) {
+            modalTitle.textContent = activityDetails[activity].title;
+            modalBody.innerHTML = `<p>${activityDetails[activity].content}</p>`;
+          } else {
+            modalTitle.textContent = "Activity Details";
+            modalBody.innerHTML = "<p>No details available.</p>";
+          }
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.getElementById("navbar_top");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            navbar.classList.add("fixed-top");
+          } else {
+            navbar.classList.remove("fixed-top");
+          }
+        });
+      });
+    </script>
+    <script src="./js/modal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/offcanvas.js"></script>
+    <!-- Bootstrap JS (Add this before closing body tag) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Hover Panel -->
+    <script>
+      $(document).ready(function () {
+        var screen = $(window);
+        if (screen.width() > 768) {
+          var logoWidth = $(".navbar-brand").width() + 2;
+          var newWidth = "calc(100% + " + logoWidth + "px)";
+          $(".subnav-content").css("width", newWidth);
+          $(".subnav-content").css("left", -logoWidth);
+          $(".dropdown-menu.subnav-content").css("width", "100%");
+          $(".dropdown-menu.subnav-content").css("left", "0px");
+          $(window).resize(function () {
+            var logoWidth = $(".navbar-brand").width() + 2;
+            var newWidth = "calc(100% + " + logoWidth + "px)";
+            $(".subnav-content").css("width", newWidth);
+            $(".subnav-content").css("left", -logoWidth);
+            $(".dropdown-menu.subnav-content").css("width", "100%");
+            $(".dropdown-menu.subnav-content").css("left", "0px");
+          });
+        }
+      });
+      /* highlight nav-btn on panel hover */
+      $(".subnav-unit-wrap")
+        .on("mouseenter", function () {
+          //console.log('panel');
+          $(this)
+            .parents(".subnav")
+            .children(".nav-link")
+            .css({ "background-color": "var(--site-color)", color: "white" });
+        })
+        .on("mouseleave", function () {
+          $(this).parents(".subnav").children(".nav-link").css({
+            "background-color": "transparent",
+            color: "var(--secondary-color)",
+          });
+        });
+    </script>
+    <!-- SIDEBAR -->
+    <!-- <script type="text/javascript" src="js/offcanvas.js"></script> -->
+  </body>
+</html>
