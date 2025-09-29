@@ -1,0 +1,51 @@
+.support-btn {
+  /* background: #3db166; */
+  background-color: #ff4500;
+  padding: 5px;
+}
+
+@media (max-width: 1400px) {
+  /* .support-btn {
+    background: none;
+    line-height: normal;
+    padding: 0;
+    height: auto;
+    font-weight: normal;
+    font-size: unset;
+  } */
+  .support-btn {
+    /* background: #3db166; */
+    background-color: #ff4500;
+    padding: 2px;
+    height: 100%;
+    font-weight: 500;
+  }
+}
+@media (max-width: 1345px) {
+  .support-btn {
+    background: none;
+    line-height: normal;
+    padding-top: 5px;
+    height: auto;
+    font-weight: normal;
+    font-size: unset;
+  }
+}
+@media (max-width: 1273px) {
+  .support-btn {
+    background: none;
+    line-height: normal;
+    padding-top: 0px;
+    height: auto;
+    font-weight: normal;
+    font-size: unset;
+    position: relative;
+  }
+}
+
+.header-top-reglog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
