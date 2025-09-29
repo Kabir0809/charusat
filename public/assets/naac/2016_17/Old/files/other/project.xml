@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flipbookmaker version="4.3.3" IsQuick="false" QuickFile="" ProjectName="" DefaultName="GJUNGN11356-CHARUSAT" SearchOrder="ltr" Google="" UseMiniMode="false" UsePSW="false" MiniWidth="400" MiniHeight="300" PSW="" StartPage="0" UseFlipSound="true" UseBackSound="false" UseSingleSound="false" BackSoundPath="" IsRight2Left="false" IsFastene="false" IsHardCover="0" IsHardPage="0" IsAnimate="true" IsCenterBook="true" IsLandScape="0" IsOpenBook="1" DragArea="top,middle,bottom" FlipSpeed="0.25" PageThick="0.1" SpineColor="13421772" Curvature="-0.5" PageBackColor="13421772" PageTranColor="0" FoldLine="0.5" Loaded="22" ZoomStep="0.25, 0.5, 1, 2, 4, 8" UseReflection="false" RefTransparent="75" RefOffset="0" IsAutoPlay="false" IsRepeat="false" DurationPlay="3" Preloader="bookcase" LoadText="" PowerBy="" NavigationStyle="" ButtonStyle="" ShowCover="false" ShowPreNext="true" ShowPlayStop="true" ShowScreen="true" ShowToc="false" ShowZoom="true" ShowBookmark="false" ShowDownload="false" DownloadUrl="" ShowText="false" ShowSlider="false" ShowShare="false" ShowPrint="false" ShowZoomBar="true" ShowSearch="true" ShowSearchBox="true" ShowMusic="false" ShowThumbnail="true" ShowExit="true" ShowBookCase="false" ButtonScale="0" IntroMovie="" IntroEffect="" Scene="" ShowAbout="false" ShowDraw="false" ShowLang="false" UseGradient="true" Edge="1" EdgeColor="13421772" TemplateGroup="float" TemplateName="normal" ExeTitle="" HtmlTitle="" HtmlKeywords="" HtmlDescription="" HtmlScript="" PageWidth="565" PageHeight="800" CoverWidth="565" CoverHeight="800" Langs="en" LangHints="English" BookLangs="en,jp,fr,de,ar">
+  <book title="CHARUSAT NAAC SSR" plugins="navigationbar, keyboardnavigation, links, password, pdflinks, anchors, index, titles, search, gestures, draw, tuio, slideshow,javascript,swfaddress,print,thumbnails,bookmarks,select,musicplayers, toc, share, about, bookcase" pagewidth="565" pageheight="800" searchindex="files/search_index/en.txt" stiffskew="1" guipath="files/gui/" asulextension="xml" lang="en,jp,fr,de,ar" langpath="files/langs/" flagpath="files/flags/" pluginpath="files/plugins/" priorities="vid(20); snd(15); area(5); nav(5); txt(5); gal(30)" sndpath="files/snd/" password="" pwstart="0" thumbloadtext="Loading" zoommaxscale="2" zoomminscale="0.1" zoomsnap="0.25, 0.5, 1, 2, 4, 8" zoomstep="" slidestart="false" slidedelay="3" sliderepeat="false" toc="files/data/toc.xml" bookcase="files/data/bookcase.xml" download="" minimode="false" miniwidth="400" miniheight="300" layout="files/data/layout.xml" buttoncfg="files/data/buttoncfg.xml" about="files/data/about.xml" abc="bdgf">
+    <background>
+      <box name="" anchors="0,0,ph,pw"/>
+    </background>
+    <bookmarks/>
+    <chapter pagewidth="565" pageheight="800">
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_1_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_2_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+    </chapter>
+    <chapter pagewidth="565" pageheight="800">
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_3_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_4_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_5_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_6_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_7_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_8_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_9_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_10_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_11_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_12_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_13_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_14_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_15_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_16_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_17_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_18_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_19_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_20_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_21_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_22_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_23_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_24_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_25_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_26_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_27_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_28_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_29_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_30_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_31_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_32_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_33_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="618" height="800" widthorg="612" heightorg="792" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_34_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_35_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_36_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+    </chapter>
+    <chapter pagewidth="565" pageheight="800">
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_37_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+      <page stiffskew="1">
+        <img width="566" height="800" widthorg="595" heightorg="841" position="center middle" alpha="1" rotation="0" caption="" event="0" mask="" filetype="1" id="" ytparam="autoplay=0&amp;loop=0">
+          <action actionid="0" gui="" widthpop="400" heightpop="300" galxml="">
+            <wincontents>
+              <![CDATA[]]>
+            </wincontents>
+          </action>
+          <effmenter Param1="" Param2=""/>
+          <effenter value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <effleave value="" funname="" delay="0" loop="0" rollback="false" loopdelay="0" speed="0" stagger="0"/>
+          <src lang="en">C:\Users\DIXIT~1.CMP\AppData\Local\Temp\flipbook_{4548D0E6-63CF-4D7A-9A91-D2EDF78FE8F4}\files\pages\en\high\GJUNGN11356-CHARUSAT_38_{8231ACDF-BBD1-4168-AFBE-42CFAE82A599}_en.swf</src>
+        </img>
+      </page>
+    </chapter>
+  </book>
+  <MyFont Name="Verdana" Color="7229245" Size="12" Style="1" Text="CHARUSAT NAAC SSR" Url=""/>
+  <Backgd UseBackImg="true" BackColor1="0" BackColor2="10066329" ColorStyle="radial" ImagePath="files/assets/skin/bg.png" ImageStyle="Tile" TransParent="10" AType="0"/>
+  <Logo Name="" Color="0" Size="0" Style="0" Text="" Url="" UseLogo="false" UseImage="false" ImagePath="" ImageTrans="0" BackColor="0" Width="100" Height="100" Target="_blank"/>
+  <FontObj Name="" Color="0" Size="0" Style="0"/>
+  <Bookmarks/>
+  <Playlist skin="" miniskin="" startmini="false" onlywhenactive="false" playmode="1" loopmode="1"/>
+  <BookCase/>
+</flipbookmaker>
