@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
 import csrtc from "@/public/assets/images/initiative/SPACE RESEARCH CELL.jpg";
 import kradle from "@/public/assets/images/event/2.jpg";
 import credp from "@/public/assets/images/initiative/RURAL EDUCATION.jpg";
@@ -17,298 +20,232 @@ const title = "Initiatives";
 const eventSliderList = [
   {
     imgUrl: csrtc,
-    imgAlt: "CSRTC space research center showing laboratory equipment and satellite technology",
+    imgAlt: "CHARUSAT Space Research and Technology Center",
     title: "CHARUSAT Space Research and Technology Center",
-    btnText: "Read More",
     url: "/csrtc",
     id: 1,
   },
   {
     imgUrl: kradle,
-    imgAlt: "KRADLE research and development center showing modern laboratory facilities",
+    imgAlt: "KRADLE - Dr. K. C. Patel Research & Development Center",
     title: "Dr. K. C. Patel Research & Development Center",
-    btnText: "Read More",
     url: "https://kradle.charusat.ac.in/",
     id: 2,
   },
   {
     imgUrl: credp,
-    imgAlt: "CREDP rural education program showing students and teachers in village setting",
+    imgAlt: "CREDP - CHARUSAT Rural Education Development Program",
     title: "CHARUSAT Rural Education Development Program",
-    btnText: "Read More",
     url: "/CREDP",
     id: 3,
   },
   {
     imgUrl: icc,
-    imgAlt: "ICC international cosmology center showing astronomical equipment and research facilities",
+    imgAlt: "International Cosmology Center",
     title: "International Cosmology Center (ICC)",
-    btnText: "Read More",
     url: "#",
     id: 4,
   },
   {
     imgUrl: sdg,
-    imgAlt: "SDG Handprint Action Lab showing sustainable development goals activities",
+    imgAlt: "SDG Handprint Action Lab",
     title: "SDG Handprint Action Lab",
-    btnText: "Read More",
     url: "#",
     id: 5,
   },
   {
     imgUrl: hrdc,
-    imgAlt: "HRDC human resource development center showing training and development activities",
+    imgAlt: "Pri. B. I. Patel Human Resource Development Center",
     title: "Pri. B. I. Patel Human Resource Development Center",
-    btnText: "Read More",
     url: "/hrdc",
     id: 6,
   },
   {
     imgUrl: edic,
-    imgAlt: "CSIC startup and innovation center showing entrepreneurship activities and incubation facilities",
+    imgAlt: "Charusat Startup and Innovation Centre (CSIC)",
     title: "Charusat Startup and Innovation Centre (CSIC)",
-    btnText: "Read More",
     url: "/csic",
     id: 7,
   },
   {
     imgUrl: uiic,
-    imgAlt: "UIIC university industry interaction cell showing collaboration between academia and industry",
+    imgAlt: "University Industry Interaction Cell (UIIC)",
     title: "University Industry Interaction Cell (UIIC)",
-    btnText: "Read More",
     url: "/university-industry-interaction-cell",
     id: 8,
   },
   {
     imgUrl: nabl,
-    imgAlt: "NABL testing facilities showing accredited laboratory equipment and quality testing procedures",
+    imgAlt: "NABL & Testing Facilities",
     title: "NABL & Testing Facilities",
-    btnText: "Read More",
     url: "#",
     id: 9,
   },
   {
     imgUrl: CIVF,
-    imgAlt: "CIVF innovative ventures foundation showing entrepreneurship and innovation activities",
-    title: [
-      <span key="title1">Charusat Innovative Ventures Foundation</span>,
-      <br key="title2" />,
-    ],
-    btnText: "Read More",
+    imgAlt: "Charusat Innovative Ventures Foundation",
+    title: "Charusat Innovative Ventures Foundation",
     url: "https://civf.co.in/",
     id: 10,
   },
 ];
 
+// Common visual theme for initiatives
+const initiativeConfig = {
+  bgGradient: "linear-gradient(135deg, #007bff 0%, #0056b3 100%)",
+  borderColor: "#007bff",
+  icon: "🚀",
+};
+
 export default function Initiatives() {
-  const imageStyle = {
-    height: "200px",
-    objectFit: "cover",
-    width: "100%",
-  };
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
-    <section className="course-section shape-img padding-b" role="region" aria-labelledby="initiatives-heading">
-      <div className="container py-4 text-center">
-        <span
-          className="subtitle h5"
-          style={{
-            color: "#f16126",
-            fontWeight: "normal",
-            letterSpacing: "2px",
-          }}
-          aria-label="Section subtitle"
-        >
-          {subTitle}
-        </span>
-        <div className="text-center">
-          <h2 id="initiatives-heading" className="title mx-auto mb-4">{title}</h2>
-        </div>
-
-        <div className="section-wrapper">
-          <div 
-            className="row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 course-filter"
-            role="list"
-            aria-label="List of university initiatives and programs"
-          >
-            {eventSliderList.map((elem) => {
-              const {
-                id,
-                imgUrl,
-                imgAlt,
-                cate,
-                programs,
-                title,
-                url,
-                author,
-                authorName,
-                price,
-              } = elem;
-              
-              // Convert title to string for aria-label if it's an array
-              const titleText = Array.isArray(title) 
-                ? title.filter(item => typeof item === 'string' || (item && item.props && typeof item.props.children === 'string'))
-                    .map(item => typeof item === 'string' ? item : item.props.children)
-                    .join(' ')
-                : title;
-
-              return (
-                <div key={id} className="col" role="listitem">
-                  <Link 
-                    href={url}
-                    aria-label={`Visit ${titleText} - ${elem.btnText} - ${url.startsWith('http') ? 'Opens in new tab' : 'Internal page'}`}
-                    target={url.startsWith('http') ? "_blank" : undefined}
-                    rel={url.startsWith('http') ? "noopener noreferrer" : undefined}
-                  >
-                    <article 
-                      className="course-item style-4"
-                      aria-labelledby={`initiative-${id}-title`}
+    
+    <section
+      className="py-5"
+      style={{ background: "#e1e1e1", minHeight: "100vh" }}
+      role="region"
+      aria-labelledby="initiatives-heading"
+      >
+      <div className="text-center mb-5">
+        <p className="lead text-muted">{subTitle}</p>
+        <h2 id="initiatives-heading" className="display-4 fw-bold text-dark">
+          {title}
+        </h2>
+      </div>
+      <div className="container">
+        <div className="row g-4 justify-content-center">
+          {eventSliderList.map((item, index) => (
+            <div
+              key={item.id}
+              className="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+              style={{
+                opacity: isLoaded ? 1 : 0,
+                transform: isLoaded ? "translateY(0)" : "translateY(20px)",
+                transition: `all 0.4s ease ${index * 0.05}s`,
+              }}
+            >
+              <Link
+                href={item.url}
+                target={item.url.startsWith("http") ? "_blank" : undefined}
+                rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="text-decoration-none"
+              >
+                <article
+                  className="card h-100 border-0 shadow-sm position-relative overflow-hidden faculty-card"
+                  style={{
+                    borderRadius: "24px",
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                    borderLeft: `5px solid ${initiativeConfig.borderColor}`,
+                    background: "rgba(255, 255, 255, 0.25)",
+                    backdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.3)",
+                    boxShadow:
+                      "0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+                  }}
+                >
+                  {/* Image */}
+                  <div className="position-relative overflow-hidden" style={{ height: "220px" }}>
+                    <Image
+                      src={item.imgUrl}
+                      alt={item.imgAlt}
+                      fill
+                      style={{
+                        // objectFit: "cover",
+                        transition: "transform 0.4s ease",
+                      }}
+                      className="faculty-image"
+                    />
+                    {/* Overlay */}
+                    <div
+                      className="position-absolute top-0 start-0 w-100 h-100 faculty-overlay d-flex align-items-center justify-content-center"
+                      style={{
+                        background: initiativeConfig.bgGradient,
+                        opacity: 0,
+                        transition: "opacity 0.4s ease",
+                      }}
                     >
-                      <div className="course-inner">
-                        <div className="course-thumb">
-                          <Image src={imgUrl} alt={imgAlt} style={imageStyle} />
-                          <div
-                            className="course-category"
-                            style={{
-                              backgroundColor: "transparent",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            <div
-                              className="course-cate text-center m-auto"
-                              style={{
-                                height: "68px",
-                              }}
-                            >
-                              <span
-                                style={{
-                                  color: "white",
-                                  fontWeight: "800",
-                                }}
-                                aria-hidden="true"
-                              >
-                                {cate}
-                              </span>
-                              <div
-                                style={{
-                                  fontSize: "1rem",
-                                }}
-                              >
-                                <span
-                                  id={`initiative-${id}-title`}
-                                  style={{
-                                    padding: "5px 15px",
-                                    color: "white",
-                                    fontWeight: "800",
-                                  }}
-                                >
-                                  {title}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
+                      <div className="text-center text-white">
+                        {/* <div
+                          className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3 bg-white bg-opacity-20"
+                          style={{ width: "60px", height: "60px" }}
+                        >
+                          <span role="img" aria-hidden="true" className="fs-3">
+                            {initiativeConfig.icon}
+                          </span>
+                        </div> */}
+                        <div className="btn btn-light btn-sm rounded-pill px-4 fw-semibold">
+                          Explore More ➡️
                         </div>
                       </div>
-                    </article>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+                    </div>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="card-body p-4 text-center">
+                    <h5
+                      className="card-title fw-bold text-dark mb-2 lh-sm"
+                      style={{
+                        fontSize: "1.25rem",
+                        minHeight: "2.2rem",
+                        display: "-webkit-box",
+                        WebkitLineClamp: "2",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {item.title}
+                    </h5>
+
+                    {/* Gradient Underline */}
+                    <div className="d-flex justify-content-center mb-3">
+                      <div
+                        className="gradient-line"
+                        style={{
+                          width: "40px",
+                          height: "3px",
+                          background: initiativeConfig.bgGradient,
+                          borderRadius: "2px",
+                          transition: "width 0.3s ease",
+                        }}
+                      />
+                    </div>
+
+                    <small className="text-muted fst-italic">
+                      Empowering innovation and impact
+                    </small>
+                  </div>
+                </article>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
 
       <style jsx>{`
-        /* Enhanced focus styles for keyboard navigation */
-        .course-item:focus-within {
-          outline: 3px solid #0066cc;
-          outline-offset: 2px;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        .faculty-card {
+          cursor: pointer;
         }
-
-        /* Remove focus outline for mouse users */
-        .course-item:focus-within:not(:focus-visible) {
-          outline: none;
+        .faculty-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15),
+            0 15px 35px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+          background: rgba(255, 255, 255, 0.35) !important;
         }
-
-        /* Ensure text stays visible on hover */
-        .course-category span {
-          color: white !important;
-          z-index: 10;
-          position: relative;
+        .faculty-card:hover .faculty-image {
+          transform: scale(1.1);
         }
-
-        .course-item:hover .course-category span {
-          color: white !important;
+        .faculty-card:hover .faculty-overlay {
+          opacity: 0.9 !important;
         }
-
-        /* Screen reader only content */
-        .sr-only {
-          position: absolute !important;
-          width: 1px !important;
-          height: 1px !important;
-          padding: 0 !important;
-          margin: -1px !important;
-          overflow: hidden !important;
-          clip: rect(0, 0, 0, 0) !important;
-          white-space: nowrap !important;
-          border: 0 !important;
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-          .course-item {
-            border: 2px solid currentColor;
-          }
-          
-          .course-item:focus-within {
-            outline: 4px solid currentColor;
-          }
-        }
-
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-          .course-item {
-            transition: none;
-          }
-          
-          .course-item:focus-within {
-            transform: none;
-          }
-        }
-
-        /* Windows high contrast mode */
-        @media (-ms-high-contrast: active) {
-          .course-item {
-            border: 2px solid;
-          }
-        }
-
-        @media (max-width: 768px) {
-          /* Smaller focus outline on mobile */
-          .course-item:focus-within {
-            outline-width: 2px;
-          }
-        }
-
-        /* Print accessibility */
-        @media print {
-          .course-item {
-            border: 1px solid #000;
-            box-shadow: none;
-            break-inside: avoid;
-          }
-          
-          .sr-only {
-            position: static !important;
-            width: auto !important;
-            height: auto !important;
-            margin: 0 !important;
-            overflow: visible !important;
-            clip: auto !important;
-            white-space: normal !important;
-          }
+        .faculty-card:hover .gradient-line {
+          width: 120px !important;
         }
       `}</style>
     </section>

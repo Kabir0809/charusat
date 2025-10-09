@@ -1,6 +1,5 @@
-import React from "react";
-// const subTitle = "Why Choose Us";
-const title = " Collaborations";
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from "next/image";
 import UOP from "@/public/assets/images/instructor/UNIVERSITY OF PRINCE.webp";
 import AICTE from "@/public/assets/images/instructor/AICTE.webp";
@@ -27,424 +26,183 @@ import UGC_DAE from "@/public/assets/images/instructor/UGC_DAE.webp";
 import UJC from "@/public/assets/images/instructor/UJC.webp";
 import UOE from "@/public/assets/images/instructor/UNIVERSITY OF EXETER.webp";
 
-// const instructorTopList = [
-//   {
-//     imgUrl: "assets/images/instructor/09.jpg",
-//     imgAlt: "instructor rajibraj91 rajibraj",
-//     name: "Emilee Logan",
-//     degi: "Lead Instructor",
-//     infoList: [
-//       {
-//         iconName: "icofont-envelope",
-//         text: "info@prof.mail.com",
-//       },
-//       {
-//         iconName: "icofont-youtube-play",
-//         text: "www.youtube.com/prof.ls",
-//       },
-//     ],
-//     socialList: [
-//       {
-//         iconName: "icofont-facebook",
-//         className: "facebook",
-//         siteLink: "#",
-//       },
-//       {
-//         iconName: "icofont-twitter",
-//         className: "twitter",
-//         siteLink: "#",
-//       },
-//       {
-//         iconName: "icofont-linkedin",
-//         className: "linkedin",
-//         siteLink: "#",
-//       },
-//     ],
-//   },
-//   {
-//     imgUrl: "assets/images/instructor/10.jpg",
-//     imgAlt: "instructor rajibraj91 rajibraj",
-//     name: "Angel Mili",
-//     degi: "Lead Instructor",
-//     infoList: [
-//       {
-//         iconName: "icofont-envelope",
-//         text: "info@prof.mail.com",
-//       },
-//       {
-//         iconName: "icofont-youtube-play",
-//         text: "www.youtube.com/prof.ls",
-//       },
-//     ],
-//     socialList: [
-//       {
-//         iconName: "icofont-facebook",
-//         className: "facebook",
-//         siteLink: "#",
-//       },
-//       {
-//         iconName: "icofont-twitter",
-//         className: "twitter",
-//         siteLink: "#",
-//       },
-//       {
-//         iconName: "icofont-linkedin",
-//         className: "linkedin",
-//         siteLink: "#",
-//       },
-//     ],
-//   },
-// ];
+const HoneycombGallery = () => {
+  const [selectedHex, setSelectedHex] = useState(null);
+  const [hexagons] = useState([
+    // Row 0
+    { id: 1, image: AICTE, title: 'AICTE', row: 0, col: 0 },
+    { id: 2, image: AIMST, title: 'AIMST University', row: 0, col: 1 },
+    { id: 3, image: ATOMIC, title: 'BHABHA ATOMIC', row: 0, col: 2 },
+    { id: 4, image: Envi, title: 'Centre of Envi Education', row: 0, col: 3 },
 
-const instructorBottomList = [
-  {
-    imgUrl: AICTE,
-    imgAlt: "AICTE logo",
-    name: "AICTE",
-  },
-  {
-    imgUrl: AIMST,
-    imgAlt: "AIMST University logo",
-    name: "AIMST University",
-  },
-  {
-    imgUrl: ATOMIC,
-    imgAlt: "Bhabha Atomic logo",
-    name: "BHABHA ATOMIC",
-  },
-  {
-    imgUrl: Envi,
-    imgAlt: "Centre of Environmental Education logo",
-    name: "Centre of Envi Education",
-  },
-  {
-    imgUrl: DR,
-    imgAlt: "Defence Research Development logo",
-    name: "Defence Research Development",
-  },
-  {
-    imgUrl: DoB,
-    imgAlt: "Department of BioTech logo",
-    name: "Dept of BioTech",
-  },
-  {
-    imgUrl: GESIA,
-    imgAlt: "GESIA logo",
-    name: "GESIA",
-  },
-  {
-    imgUrl: MGMT,
-    imgAlt: "Gujarat Institute of Disaster Management logo",
-    name: "GUJARAT INST OF DISASTER MGMT",
-  },
-  {
-    imgUrl: GUJCOST,
-    imgAlt: "GUJCOST logo",
-    name: "GUJCOST",
-  },
-  {
-    imgUrl: HARRISBURG,
-    imgAlt: "Harrisburg University logo",
-    name: "HARRISBURG University",
-  },
-  {
-    imgUrl: INESCTEC,
-    imgAlt: "INESCTEC logo",
-    name: "INESCTEC",
-  },
-  {
-    imgUrl: IOP,
-    imgAlt: "Institute of Plasma logo",
-    name: "INST OF PLASMA",
-  },
-  {
-    imgUrl: ISRO,
-    imgAlt: "ISRO logo",
-    name: "ISRO",
-  },
-  {
-    imgUrl: KIU,
-    imgAlt: "KIU logo",
-    name: "KIU",
-  },
-  {
-    imgUrl: PTI,
-    imgAlt: "L&T PTI logo",
-    name: "L&T PTI",
-  },
-  {
-    imgUrl: MSAT,
-    imgAlt: "Ministry of Science and Technology logo",
-    name: "MINISTRY OF SCIENCE AND TECH",
-  },
-  {
-    imgUrl: MOTOROLA,
-    imgAlt: "Motorola Solutions logo",
-    name: "MOTOROLA SOLUTIONS",
-  },
-  {
-    imgUrl: NRS,
-    imgAlt: "NRS logo",
-    name: "NRS",
-  },
-  {
-    imgUrl: RAE,
-    imgAlt: "RAE logo",
-    name: "RAE",
-  },
-  {
-    imgUrl: TU,
-    imgAlt: "Technische University logo",
-    name: "TECHNISCHE UNIVERSITY",
-  },
-  {
-    imgUrl: UGC_DAE,
-    imgAlt: "UGC DAE logo",
-    name: "UGC_DAE",
-  },
-  {
-    imgUrl: UJC,
-    imgAlt: "UJC logo",
-    name: "UJC",
-  },
-  {
-    imgUrl: UOE,
-    imgAlt: "University of Exeter logo",
-    name: "UNIVERSITY OF EXETER",
-  },
-  {
-    imgUrl: UOP,
-    imgAlt: "University of Prince logo",
-    name: "UNIVERSITY OF PRINCE",
-  },
-];
+    // Row 1 (offset)
+    { id: 5, image: DR, title: 'Defence Research Development', row: 1, col: 0 },
+    { id: 6, image: DoB, title: 'Dept of BioTech', row: 1, col: 1 },
+    { id: 7, image: GESIA, title: 'GESIA', row: 1, col: 2 },
 
-export default function collaboration() {
-  return (
-    // <div>
-    //   <div className="instructor-section style-3  padding-b  section-bg-ash">
-    //     <div className="container">
-    //       <div className="section-header text-center">
-    //         {/* <span className="subtitle">University</span> */}
-    //         <h2 className="title">{title}</h2>
-    //       </div>
-    //       <div className="section-wrapper">
-    //         {/* <div className="instructor-top">
-    //                     <div className="row g-4 justify-content-center row-cols-1 row-cols-lg-2">
-    //                         {instructorTopList.map((val, i) => (
-    //                             <div className="col" key={i}>
-    //                                 <div className="instructor-item style-2">
-    //                                     <div className="instructor-inner">
-    //                                         <div className="instructor-thumb">
-    //                                             <img src={`${val.imgUrl}`} alt={`${val.imgAlt}`} />
-    //                                         </div>
-    //                                         <div className="instructor-content">
-    //                                             <Link to="/team-single"><h4>{val.name}</h4></Link>
-    //                                             <span className="d-block">{val.degi}</span>
-    //                                             <ul className="lab-ul ins-info">
-    //                                                 {val.infoList.map((val, i) => (
-    //                                                     <li key={i}><i className={val.iconName}></i> {val.text}</li>
-    //                                                 ))}
-    //                                             </ul>
-    //                                             <ul className="lab-ul social-icons">
-    //                                                 {val.socialList.map((val, i) => (
-    //                                                     <li key={i}>
-    //                                                         <a href={val.siteLink} className={val.className}><i className={val.iconName}></i></a>
-    //                                                     </li>
-    //                                                 ))}
-    //                                             </ul>
-    //                                         </div>
-    //                                     </div>
-    //                                 </div>
-    //                             </div>
-    //                         ))}
-    //                     </div>
-    //                 </div> */}
-    //         <div className="instructor-bottom">
-    //           <div className="instructor-slider overflow-hidden">
-    //             <div className="instructor-navi instructor-slider-next">
-    //               <i className="icofont-rounded-double-right"></i>
-    //             </div>
-    //             <div className="instructor-navi instructor-slider-prev">
-    //               <i className="icofont-rounded-double-left"></i>
-    //             </div>
-    //             <Swiper
-    //               spaceBetween={5}
-    //               slidesPerView={2}
-    //               loop={"true"}
-    //               autoplay={{
-    //                 delay: 5000,
-    //                 disableOnInteraction: false,
-    //               }}
-    //               navigation={{
-    //                 prevEl: ".instructor-slider-prev",
-    //                 nextEl: ".instructor-slider-next",
-    //               }}
-    //               modules={[Autoplay, Navigation]}
-    //               breakpoints={{
-    //                 0: {
-    //                   width: 340,
-    //                   slidesPerView: 2,
-    //                 },
-    //                 768: {
-    //                   width: 768,
-    //                   slidesPerView: 3.5,
-    //                 },
-    //                 1200: {
-    //                   width: 1200,
-    //                   slidesPerView: 5.5,
-    //                 },
-    //               }}
-    //             >
-    //               {instructorBottomList.map((val, i) => (
-    //                 <SwiperSlide key={i}>
-    //                   <div className="instructor-item">
-    //                     <div className="instructor-inner">
-    //                       <div className="instructor-thumb">
-    //                         <img src={`${val.imgUrl}`} alt={`${val.imgAlt}`} />
-    //                       </div>
-    //                       {/* <div className="instructor-content">
-    //                                                 <Link to="/team-single"><h5>{val.name}</h5></Link>
-    //                                                 <span className="d-block">{val.degi}</span>
-    //                                             </div> */}
-    //                     </div>
-    //                   </div>
-    //                 </SwiperSlide>
-    //               ))}
-    //             </Swiper>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-    <section className="clients-section style-3 py-4" role="region" aria-labelledby="collaborations-heading">
-      <div className="container">
-        <div className="section-header text-center">
-          <span className="subtitle" aria-label="Section category">ALLIANCE</span>
-          <h2 id="collaborations-heading" className="title">{title}</h2>
-          {/* <h2 className="abs-title">{absTitle}</h2> */}
-        </div>
+    // Row 2
+    { id: 8, image: MGMT, title: 'GUJARAT INST OF DISASTER MGMT', row: 2, col: 0 },
+    { id: 9, image: GUJCOST, title: 'GUJCOST', row: 2, col: 1 },
+    { id: 10, image: HARRISBURG, title: 'HARRISBURG University', row: 2, col: 2 },
+    { id: 11, image: INESCTEC, title: 'INESCTEC', row: 2, col: 3 },
 
-        <div className="section-wrapper">
-          <div 
-            className="sponsor-slider row sponsor-main"
-            role="list"
-            aria-label="List of institutional collaborations and partnerships"
+    // Row 3 (offset)
+    { id: 12, image: IOP, title: 'INST OF PLASMA', row: 3, col: 0 },
+    { id: 13, image: ISRO, title: 'ISRO', row: 3, col: 1 },
+    { id: 14, image: KIU, title: 'KIU', row: 3, col: 2 },
+
+    // Row 4
+    { id: 15, image: PTI, title: 'L&T PTI', row: 4, col: 0 },
+    { id: 16, image: MSAT, title: 'MINISTRY OF SCIENCE AND TECH', row: 4, col: 1 },
+    { id: 17, image: MOTOROLA, title: 'MOTOROLA SOLUTIONS', row: 4, col: 2 },
+    { id: 18, image: NRS, title: 'NRS', row: 4, col: 3 },
+
+    // Row 5 (offset)
+    { id: 19, image: RAE, title: 'RAE', row: 5, col: 0 },
+    { id: 20, image: TU, title: 'TECHNISCHE UNIVERSITY', row: 5, col: 1 },
+    { id: 21, image: UGC_DAE, title: 'UGC_DAE', row: 5, col: 2 },
+
+    // Row 6
+    { id: 22, image: UJC, title: 'UJC', row: 6, col: 0 },
+    { id: 23, image: UOE, title: 'UNIVERSITY OF EXETER', row: 6, col: 1 },
+    { id: 24, image: UOP, title: 'UNIVERSITY OF PRINCE', row: 6, col: 2 },
+]);
+
+
+  const hexSize = 90; // side length
+  const hexWidth = hexSize * 2;
+  const hexHeight = Math.sqrt(3) * hexSize;
+  const vertSpacing = hexHeight * 0.5;
+  const horizSpacing = hexWidth * 1; // spacing so one side length gap remains
+
+  const getHexPosition = (row, col) => {
+    const offsetX = (row % 2 === 1) ? hexWidth * 0.75 : 0; // stagger odd rows
+    const x = col * horizSpacing * 1.5 + offsetX;
+    const y = row * vertSpacing;
+    return { x, y };
+  };
+
+  const Hexagon = ({ hex }) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const position = getHexPosition(hex.row, hex.col);
+
+    return (
+      <div
+        onClick={() => setSelectedHex(hex)}
+        style={{
+          position: 'absolute',
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+          width: `${hexWidth}px`,
+          height: `${hexHeight}px`,
+          transform: isHovered ? 'scale(1.08)' : 'scale(1)',
+          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          cursor: 'pointer',
+          zIndex: isHovered ? 20 : 1,
+          padding: '5px',
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+            overflow: 'hidden',
+            position: 'relative',
+            boxSizing: 'border-box',
+          }}
+        >
+          <Image
+            src={hex.image}
+            alt={hex.title}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: `translate(-50%, -50%) scale(${isHovered ? 1.15 : 1})`,
+              transition: 'transform 0.6s ease',
+              padding: '10px',
+              backgroundColor: 'white',
+            }}
+          />
+          {/* Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: isHovered
+                ? 'linear-gradient(135deg, rgba(13,110,253,0.5) 0%, rgba(108,117,125,0.5) 100%)'
+                : 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%)',
+              transition: 'background 0.4s ease',
+            }}
+          />
+          {/* Text */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              color: 'white',
+              opacity: isHovered ? 1 : 0,
+              transition: 'opacity 0.4s ease',
+              textAlign: 'center',
+              padding: '20px',
+            }}
           >
-            {instructorBottomList.map((val, i) => (
-              <div key={i} className="col-md-2" data-aos="flip-right" role="listitem">
-                <div className="sponsor-iten">
-                  <div 
-                    className="sponsor-thumb bg-white border p-3 m-2 rounded"
-                    role="img"
-                    aria-label={`${val.name} collaboration partner`}
-                  >
-                    <Image
-                      src={val.imgUrl}
-                      alt={val.imgAlt}
-                      height={"200px"}
-                      width={"100%"}
-                      style={{
-                        objectFit: "contain",
-                        height: "auto",
-                        maxHeight: "200px"
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div style={{ fontSize: '20px', fontWeight: 700 }}>{hex.title}</div>
+            
           </div>
         </div>
       </div>
+    );
+  };
 
-      <style jsx>{`
-        /* Enhanced focus styles for keyboard navigation */
-        .sponsor-thumb:focus-within {
-          outline: 3px solid #0066cc;
-          outline-offset: 2px;
-          transform: scale(1.05);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
+  const gridWidth =
+    Math.max(...hexagons.map((h) => getHexPosition(h.row, h.col).x)) +
+    hexWidth +
+    40;
+  const gridHeight =
+    Math.max(...hexagons.map((h) => getHexPosition(h.row, h.col).y)) +
+    hexHeight +
+    40;
 
-        /* Remove focus outline for mouse users */
-        .sponsor-thumb:focus-within:not(:focus-visible) {
-          outline: none;
-        }
+  return (
+    <div
+      className="min-vh-100 d-flex flex-column"
+      style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      }}
+    >
+      <div className="container text-center py-5">
+        <p className="lead text-white fs-5 muted">
+          Discover our Alliances
+        </p>
+        <h1 className="display-3 fw-bold text-white mb-0">Our Collaborations</h1>
+      </div>
 
-        /* Screen reader only content */
-        .sr-only {
-          position: absolute !important;
-          width: 1px !important;
-          height: 1px !important;
-          padding: 0 !important;
-          margin: -1px !important;
-          overflow: hidden !important;
-          clip: rect(0, 0, 0, 0) !important;
-          white-space: nowrap !important;
-          border: 0 !important;
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-          .sponsor-thumb {
-            border: 2px solid currentColor !important;
-          }
-          
-          .sponsor-thumb:focus-within {
-            outline: 4px solid currentColor;
-          }
-        }
-
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-          .sponsor-thumb {
-            transition: none;
-          }
-          
-          .sponsor-thumb:focus-within {
-            transform: none;
-          }
-          
-          [data-aos] {
-            animation: none !important;
-          }
-        }
-
-        /* Windows high contrast mode */
-        @media (-ms-high-contrast: active) {
-          .sponsor-thumb {
-            border: 2px solid;
-          }
-        }
-
-        @media (max-width: 768px) {
-          /* Smaller focus outline on mobile */
-          .sponsor-thumb:focus-within {
-            outline-width: 2px;
-          }
-        }
-
-        /* Print accessibility */
-        @media print {
-          .sponsor-thumb {
-            border: 1px solid #000;
-            box-shadow: none;
-            break-inside: avoid;
-          }
-          
-          .sr-only {
-            position: static !important;
-            width: auto !important;
-            height: auto !important;
-            margin: 0 !important;
-            overflow: visible !important;
-            clip: auto !important;
-            white-space: normal !important;
-          }
-        }
-      `}</style>
-    </section>
+      <div className="flex-grow-1 d-flex align-items-center justify-content-center py-1">
+        <div
+          style={{
+            position: 'relative',
+            width: `${gridWidth}px`,
+            height: `${gridHeight}px`,
+          }}
+        >
+          {hexagons.map((hex) => (
+            <Hexagon key={hex.id} hex={hex} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default HoneycombGallery;
