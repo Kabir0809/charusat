@@ -102,7 +102,7 @@ const BannerFive = () => {
         role="region" 
         aria-label="University Campus Background Video"
         style={{ 
-          paddingTop: "40px",
+          paddingTop: "-40px",
           height: "100vh",
           minHeight: "600px",
           overflow: "hidden"

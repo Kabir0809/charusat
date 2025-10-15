@@ -2,20 +2,45 @@
 import Link from "next/link";
 import Navigation from "./section/Navigation";
 import Navigation_temp from "./section/Navigation-temp";
-// import { TypeAnimation } from "react-type-animation";
 import React, { useState, useRef, useEffect } from "react";
 import "@/css/header.css";
 import SearchBar from "./section/SearchBar";
 
 const Header = () => {
-  const [socialToggle, setSocialToggle] = useState(false);
-  const [headerFixed, setHeaderFixed] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const inputRef = useRef(null);
   const searchRef = useRef(null);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      setIsScrolled(y > 8);
+    };
+
+    // initial states
+    onScroll();
+
+    // set body padding to avoid content jump
+    const h = headerRef.current?.offsetHeight || 72;
+    document.documentElement.style.setProperty("--header-h", `${h}px`);
+    document.body.classList.add("has-fixed-header");
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", () => {
+      const nh = headerRef.current?.offsetHeight || 72;
+      document.documentElement.style.setProperty("--header-h", `${nh}px`);
+    }, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.body.classList.remove("has-fixed-header");
+    };
+  }, []);
   const sections = [
     // Main Navigation
     { id: "#home", label: "Home", path: "/" },
@@ -523,15 +548,15 @@ const Header = () => {
     { id: "#notifications", label: "Notifications", path: "/notifications" },
   ];
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 80) {
-        setHeaderFixed(true);
-      } else {
-        setHeaderFixed(true);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 80) {
+  //       setHeaderFixed(true);
+  //     } else {
+  //       setHeaderFixed(false);
+  //     }
+  //   });
+  // }, []);
 
   // Add this useEffect to filter sections based on searchQuery
   useEffect(() => {
@@ -571,16 +596,18 @@ const Header = () => {
   };
 
   return (
-    <header className="header_all" role="banner">
+    <header
+      ref={headerRef}
+      className={`site-header ${isScrolled ? "is-scrolled" : ""}`}
+      role="banner"
+    >
       <div
-        className={`header-section style-3 ${
-          headerFixed ? "header-fixed fadeInUp" : ""
-        }`}
+        className="header-section style-3 is-sticky"
         role="navigation"
         aria-label="Main navigation"
       >
         <div
-          className={`header-top ${socialToggle ? "open" : ""}`}
+          className="header-top"
           style={{
             backgroundColor: "#0066b3",
             color: "white",
