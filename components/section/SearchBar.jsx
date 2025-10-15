@@ -98,7 +98,7 @@ const SearchBar = ({
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0.75rem;
+          padding: 0.2rem;
           border-radius: 9999px;
           color: #1a56db;
           background: white;

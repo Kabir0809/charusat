@@ -528,7 +528,7 @@ const Header = () => {
       if (window.scrollY > 80) {
         setHeaderFixed(true);
       } else {
-        setHeaderFixed(false);
+        setHeaderFixed(true);
       }
     });
   }, []);
@@ -584,7 +584,7 @@ const Header = () => {
           style={{
             backgroundColor: "#0066b3",
             color: "white",
-            fontSize: "0.9rem",
+            fontSize: "0.8rem",
           }}
           role="region"
           aria-label="Top navigation links"

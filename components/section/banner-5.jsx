@@ -1,118 +1,339 @@
 "use client";
-// import { useEffect, useState } from 'react';
-// import Head from "next/head";
 import Link from "next/link";
-// Import your styles
+import { useState, useEffect } from "react";
 import "normalize.css/normalize.css";
-import Slider from "react-animated-slider";
-import "react-animated-slider/build/horizontal.css";
 import "@/css/slider-animations.css";
 import "@/css/slider-banner.css";
 
-// Your component content remains the same
-// this is testing
 const BannerFive = () => {
-  const content = [
+  // Counter animation state
+  const [counters, setCounters] = useState({
+    students: 0,
+    institutes: 0,
+    faculty: 0,
+    labs: 0
+  });
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Target values for statistics
+  const targets = {
+    students: 14000,
+    institutes: 15,
+    faculty: 1500,
+    labs: 100
+  };
+
+  // Statistics data
+  const stats = [
     {
-      id: "1",
-      title: "CHARUSAT University Main Gate",
-      description: "Welcome to CHARUSAT University - A Premier Educational Institution",
-      button: "Apply Now",
-      image: "/assets/images/home/CHARUSAT_GATE.webp",
+      key: 'students',
+      value: targets.students,
+      suffix: '+',
+      label: 'Students',
+      icon: 'icofont-graduate-alt',
+      color: '#4fc3f7'
     },
     {
-      id: "2",
-      title: "CHARUSAT Campus View",
-      description: "Modern Academic Infrastructure with State-of-the-Art Facilities",
-      button: "Apply Now",
-      image: "/assets/images/home/DSC06172.webp",
+      key: 'institutes',
+      value: targets.institutes,
+      suffix: '+',
+      label: 'Institutes',
+      icon: 'icofont-building-alt',
+      color: '#66bb6a'
     },
     {
-      id: "3",
-      title: "Convocation Ceremony",
-      description: "Celebrating Academic Excellence and Student Achievements",
-      button: "Apply Now",
-      image: "/assets/images/home/S3_Convocation.webp",
+      key: 'faculty',
+      value: targets.faculty,
+      suffix: '+',
+      label: 'Faculty Members',
+      icon: 'icofont-users-alt-2',
+      color: '#ffa726'
     },
     {
-      id: "4",
-      title: "University Campus",
-      description: "Beautiful Campus Environment for Holistic Education",
-      button: "Apply Now",
-      image: "/assets/images/home/DSC07727.webp",
-    },
-    {
-      id: "5",
-      title: "Sports Complex",
-      description: "World-Class Sports Facilities for Physical Fitness and Recreation",
-      button: "Apply Now",
-      image: "/assets/images/home/Sports-complex.webp",
-    },
-    {
-      id: "6",
-      title: "Paperless Examination System",
-      description: "Digital Innovation in Assessment and Evaluation",
-      button: "Apply Now",
-      image: "/assets/images/home/Paperless-Exam.webp",
-    },
+      key: 'labs',
+      value: targets.labs,
+      suffix: '',
+      label: 'Research Labs',
+      icon: 'icofont-laboratory',
+      color: '#ef5350'
+    }
   ];
+
+  // Animate counters when component becomes visible
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2000; // 2 seconds
+    const intervals = {};
+
+    Object.keys(targets).forEach(key => {
+      const target = targets[key];
+      const increment = target / (duration / 50);
+      let current = 0;
+
+      intervals[key] = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(intervals[key]);
+        }
+        setCounters(prev => ({ ...prev, [key]: Math.floor(current) }));
+      }, 50);
+    });
+
+    return () => {
+      Object.values(intervals).forEach(interval => clearInterval(interval));
+    };
+  }, [isVisible]);
 
   return (
     <>
       <section 
-        className="d-block clearfix" 
+        className="d-block clearfix position-relative" 
         role="region" 
-        aria-label="University Campus Image Carousel"
+        aria-label="University Campus Background Video"
+        style={{ 
+          paddingTop: "40px",
+          height: "100vh",
+          minHeight: "600px",
+          overflow: "hidden"
+        }}
       >
-        <Slider 
-          autoplay="4000" 
-          className="slider-wrapper"
-          role="img"
-          aria-label="CHARUSAT University Campus Slideshow"
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="position-absolute w-100 h-100"
+          style={{
+            top: 0,
+            left: 0,
+            objectFit: "cover",
+            objectPosition: "center",
+            zIndex: 0,
+            pointerEvents: "none",
+            transformOrigin: "center center",
+            animation: "kenburns 24s ease-in-out infinite alternate",
+            willChange: "transform"
+          }}
+          aria-hidden="true"
+          onLoadedData={(e) => e.currentTarget.setAttribute("data-loaded", "true")}
+          controlsList="nodownload noplaybackrate nofullscreen"
+          disablePictureInPicture
         >
-          {content.map((item, index) => (
-            <div
-              key={index}
-              className="slider-content"
-              style={{
-                background: `url('${item.image}') no-repeat center center`,
-              }}
-              width="100%"
-              height="100%"
-              role="img"
-              aria-label={`Slide ${index + 1} of ${content.length}: ${item.title} - ${item.description}`}
-              tabIndex="0"
-            >
-              <div className="inner">
+          <source src="assets/videos/video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Video Overlay: brand-tinted gradient */}
+        <div
+          className="position-absolute w-100 h-100"
+          style={{
+            top: 0,
+            left: 0,
+            zIndex: 1,
+            pointerEvents: "none",
+            background: "linear-gradient(135deg, rgba(17, 24, 39, 0.70) 0%, rgba(31, 41, 55, 0.62) 35%, rgba(71, 85, 105, 0.55) 70%, rgba(79, 195, 247, 0.20) 100%)"
+          }}
+        />
+
+        {/* Subtle vignette + noise texture for professionalism */}
+        <div
+          className="position-absolute w-100 h-100"
+          style={{
+            top: 0,
+            left: 0,
+            zIndex: 1,
+            pointerEvents: "none",
+            backgroundImage: `
+              radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.25) 100%),
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")
+            `,
+            backgroundRepeat: "no-repeat, repeat",
+            backgroundSize: "100% 100%, 180px 180px",
+            mixBlendMode: "normal"
+          }}
+        />
+        {/* Statistics Floating Component */}
+        <div
+          className="position-absolute w-100"
+          style={{
+            bottom: "80px",
+            left: 0,
+            zIndex: 4,
+            transform: isVisible ? "translateY(0)" : "translateY(50px)",
+            opacity: isVisible ? 1 : 0,
+            transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s"
+          }}
+        >
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-11 col-lg-10">
                 <div
-                  className="main-text-slider animated-text-front-page"
+                  className="stats-container"
                   style={{
-                    fontWeight: "700",
+                    background: "rgba(255, 255, 255, 0.08)",
+                    backdropFilter: "blur(25px)",
+                    borderRadius: "20px",
+                    border: "1px solid rgba(255, 255, 255, 0.15)",
+                    boxShadow: "0 20px 60px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                    padding: "10px",
+                    position: "relative",
+                    overflow: "hidden"
                   }}
-                  role="heading"
-                  aria-level="1"
-                  aria-label={item.title}
                 >
-                  {/* Keeping titles empty as per original design, but adding screen reader text */}
-                  <span className="sr-only">{item.title}</span>
+                  {/* Animated background glow */}
+                  <div
+                    className="position-absolute"
+                    style={{
+                      top: "-50%",
+                      left: "-50%",
+                      width: "200%",
+                      height: "200%",
+                      background: "conic-gradient(from 0deg, transparent, rgba(79, 195, 247, 0.1), transparent)",
+                      animation: "rotate 20s linear infinite",
+                      zIndex: -1
+                    }}
+                  />
+
+                  <div className="row g-0">
+                    {stats.map((stat, index) => (
+                      <div key={stat.key} className="col-6 col-lg-3">
+                        <div
+                          className="stat-item text-center"
+                          style={{
+                            padding: "5px",
+                            position: "relative",
+                            borderRight: index < stats.length - 1 && index !== 1 ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+                            borderBottom: index < 2 ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+                            transition: "all 0.3s ease",
+                            cursor: "pointer"
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+                            e.currentTarget.style.transform = "scale(1.05)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = "transparent";
+                            e.currentTarget.style.transform = "scale(1)";
+                          }}
+                        >
+                          {/* Icon */}
+                          <div
+                            className="stat-icon mb-2"
+                            style={{
+                              width: "50px",
+                              height: "50px",
+                              borderRadius: "50%",
+                              background: `linear-gradient(135deg, ${stat.color}20, ${stat.color}40)`,
+                              border: `2px solid ${stat.color}30`,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              margin: "0 auto 12px",
+                              backdropFilter: "blur(10px)",
+                              animation: `pulse-${index} 3s ease-in-out infinite`
+                            }}
+                          >
+                            <i
+                              className={stat.icon}
+                              style={{
+                                fontSize: "1.5rem",
+                                color: stat.color
+                              }}
+                            />
+                          </div>
+
+                          {/* Counter */}
+                          <div
+                            className="stat-number"
+                            style={{
+                              fontSize: "clamp(1.5rem, 4vw, 2rem)",
+                              fontWeight: "700",
+                              color: "#ffffff",
+                              lineHeight: "1",
+                              marginBottom: "8px",
+                              textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)"
+                            }}
+                          >
+                            {counters[stat.key].toLocaleString()}{stat.suffix}
+                          </div>
+
+                          {/* Label */}
+                          <div
+                            className="stat-label"
+                            style={{
+                              fontSize: "0.9rem",
+                              color: "rgba(255, 255, 255, 0.8)",
+                              fontWeight: "500",
+                              letterSpacing: "0.5px",
+                              textTransform: "uppercase"
+                            }}
+                          >
+                            {stat.label}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                {/* Adding screen reader description */}
-                <p className="sr-only" aria-live="polite">
-                  {item.description}
-                </p>
               </div>
             </div>
-          ))}
-        </Slider>
-        
-        {/* Navigation instructions for screen readers */}
+          </div>
+        </div>
+
+        {/* Screen reader content */}
         <div className="sr-only" aria-live="polite">
-          University campus slideshow with {content.length} images. Use arrow keys to navigate between slides.
+          Background video is decorative and muted, enhancing the page visually.
         </div>
       </section>
 
-      {/* Embedded CSS for Accessibility */}
+      {/* Embedded CSS */}
       <style jsx>{`
+        /* Ken Burns effect */
+        @keyframes kenburns {
+          0% { transform: scale(1) translate3d(0, 0, 0); }
+          100% { transform: scale(1.06) translate3d(0, 0, 0); }
+        }
+
+        /* Rotating background glow */
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        /* Individual pulse animations for icons */
+        @keyframes pulse-0 {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+
+        @keyframes pulse-1 {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+
+        @keyframes pulse-2 {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+
+        @keyframes pulse-3 {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+
         /* Screen reader only content */
         .sr-only {
           position: absolute !important;
@@ -126,80 +347,92 @@ const BannerFive = () => {
           border: 0 !important;
         }
 
-        /* Ensure slider has proper focus styles */
-        .slider-content:focus {
-          outline: 3px solid #0066cc !important;
-          outline-offset: 2px !important;
-          box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3) !important;
+        /* Scroll animation */
+        @keyframes scroll-animation {
+          0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+          50% { opacity: 0.5; transform: translateX(-50%) translateY(15px); }
+          100% { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
-        /* Enhanced focus for keyboard navigation */
-        .slider-content:focus-visible {
-          outline: 3px solid #0066cc !important;
-          outline-offset: 2px !important;
+        /* Enhanced focus styles */
+        .btn:focus, .scroll-indicator:focus, .stat-item:focus {
+          outline: 3px solid #4fc3f7 !important;
+          outline-offset: 3px !important;
+          box-shadow: 0 0 0 6px rgba(79, 195, 247, 0.3) !important;
         }
 
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-          .slider-content {
-            border: 2px solid currentColor !important;
-          }
-          
-          .slider-content:focus {
-            outline: 4px solid currentColor !important;
-            outline-offset: 2px !important;
-          }
-        }
-
-        /* Reduced motion support for accessibility */
+        /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
-          .slider-wrapper {
-            animation: none !important;
-          }
-          
-          .slider-content {
-            transition: none !important;
-          }
-          
-          .animated-text-front-page {
-            animation: none !important;
-          }
+          video { animation: none !important; }
+          .scroll-dot { animation: none !important; }
+          .stats-container > div { animation: none !important; }
+          .stat-icon { animation: none !important; }
+          .stats-container { transition: none !important; }
         }
 
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-          .slider-content:focus {
-            outline-color: #66b3ff !important;
-            box-shadow: 0 0 0 3px rgba(102, 179, 255, 0.3) !important;
-          }
-        }
-
-        /* Mobile accessibility improvements */
+        /* Mobile optimizations */
         @media (max-width: 768px) {
-          .slider-content {
-            min-height: 300px !important;
+          section {
+            height: 100vh !important;
+            min-height: 600px !important;
           }
-          
-          .slider-content:focus {
-            outline-width: 2px !important;
+
+          .hero-content {
+            padding: 30px 20px !important;
+            margin-bottom: 80px !important;
+          }
+
+          .stats-container {
+            margin: 0 10px !important;
+            padding: 20px 15px !important;
+          }
+
+          .stat-item {
+            padding: 15px 10px !important;
+          }
+
+          .stat-number {
+            font-size: 1.5rem !important;
+          }
+
+          .stat-label {
+            font-size: 0.8rem !important;
           }
         }
 
-        /* Skip link for keyboard users */
-        .skip-to-content {
-          position: absolute;
-          top: -40px;
-          left: 6px;
-          background: #000;
-          color: #fff;
-          padding: 8px;
-          text-decoration: none;
-          z-index: 1000;
-          border-radius: 4px;
+        /* Tablet adjustments */
+        @media (max-width: 992px) and (min-width: 769px) {
+          .stat-item {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+          }
+
+          .stat-item:nth-child(4) {
+            border-bottom: none !important;
+          }
         }
 
-        .skip-to-content:focus {
-          top: 6px;
+        /* Video loading fallback */
+        video:not([data-loaded]) {
+          background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+
+        /* Hide any native controls */
+        video::-webkit-media-controls,
+        video::-webkit-media-controls-enclosure {
+          display: none !important;
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+          .stats-container {
+            border: 2px solid #ffffff !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+          }
+
+          .stat-item {
+            border-color: #ffffff !important;
+          }
         }
       `}</style>
     </>

@@ -1,6 +1,7 @@
 "use client";
 import { Fragment } from "react";
 import Faculties from "@/components/section/Faculties";
+import AwardsMarquee from "@/components/section/Recognition";
 import About from "@/components/section/about";
 import AchievementThree from "@/components/section/achievement-3";
 import Banner from "@/components/section/banner-5";
@@ -111,6 +112,7 @@ const structuredData = {
       {/* <Header /> */}
 
       <Banner />
+      <AwardsMarquee />
       <About />
       <Event />
       <VisionMission />

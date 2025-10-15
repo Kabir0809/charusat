@@ -36,7 +36,7 @@ const Navigation_temp = () => {
                 src={Logo}
                 alt="CHARUSAT University Logo"
                 style={{
-                  width: "17rem",
+                  width: "15rem",
                 }}
               />
             </Link>
