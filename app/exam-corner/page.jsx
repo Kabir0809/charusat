@@ -1,7 +1,6 @@
 'use client';
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Calendar, FileText, Bell, Clock, BookOpen, Award, FileCheck } from "lucide-react";
-import {Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import EventCalendar from "@/components/calendar/EventCalendar";
 import { eventsData } from "@/data/calendarEvents";
 
@@ -13,19 +12,19 @@ const sliderImages = [
 ];
 
 const menuItems = [
-  { key: "academic-calendar", label: "Academic Calendar", icon: Calendar },
-  { key: "coe-message", label: "COE Message", icon: FileText },
-  { key: "exam-notifications", label: "Exam Notifications", icon: Bell },
-  { key: "exam-schedules", label: "Exam Schedules", icon: Clock },
-  { key: "rules-regulations", label: "Rules & Regulations", icon: BookOpen },
-  { key: "results", label: "Results", icon: Award },
-  { key: "transcripts", label: "Transcripts & Documents", icon: FileCheck },
+  { key: "exam-calendar", label: "Exam Calendar", icon: "icofont-calendar" },
+  { key: "coe-message", label: "COE Message", icon: "icofont-file-text" },
+  { key: "exam-notifications", label: "Exam Notifications", icon: "icofont-bell" },
+  { key: "exam-schedules", label: "Exam Schedules", icon: "icofont-clock-time" },
+  { key: "rules-regulations", label: "Rules & Regulations", icon: "icofont-book-alt" },
+  { key: "results", label: "Results", icon: "icofont-award" },
+  { key: "transcripts", label: "Transcripts & Documents", icon: "icofont-file-document" },
 ];
 
 const contentData = {
-  "academic-calendar": {
-    title: "Academic Calendar",
-    content: "View the complete academic calendar for the current semester including exam dates, holidays, and important deadlines."
+  "exam-calendar": {
+    title: "Exam Calendar",
+    content: "View the complete exam calendar for the current semester including exam dates, holidays, and important deadlines."
   },
   "coe-message": {
     title: "COE Message",
@@ -55,7 +54,7 @@ const contentData = {
 
 export default function ExamSection() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [activeMenu, setActiveMenu] = useState("academic-calendar");
+  const [activeMenu, setActiveMenu] = useState("exam-calendar");
 
   const nextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % sliderImages.length);
@@ -74,7 +73,7 @@ export default function ExamSection() {
         </div>
         <div className="slider-wrapper">
           <button className="slider-btn prev" onClick={prevSlide}>
-            <ChevronLeft size={28} />
+            <i className="icofont-curved-left"></i>
           </button>
           <div className="slider-content">
             {sliderImages.map((img, idx) => (
@@ -87,7 +86,7 @@ export default function ExamSection() {
             ))}
           </div>
           <button className="slider-btn next" onClick={nextSlide}>
-            <ChevronRight size={28} />
+            <i className="icofont-curved-right"></i>
           </button>
         </div>
         <div className="slider-dots">
@@ -101,86 +100,111 @@ export default function ExamSection() {
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <Container className="bg-white p-4 rounded-3 shadow-sm">
-      <div className="">
-        <div className="">
-          <div className="layout">
-            {/* Sidebar */}
-            <aside className="sidebar">
-              <div className="sidebar-card">
-                <nav className="sidebar-nav">
-                  {menuItems.map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.key}>
-                        <button
-                          className={`sidebar-btn ${activeMenu === item.key ? "active" : ""}`}
-                          onClick={() => setActiveMenu(item.key)}
-                        >
-                          <Icon size={20} className="icon" />
-                          <span>{item.label}</span>
-                        </button>
-                        {idx < menuItems.length - 1 && <hr className="separator" />}
-                      </div>
-                    );
-                  })}
+      {/* Main Content Section - EXACTLY like media-center */}
+      <div className="exam-content-section py-4">
+        <Container className="bg-white p-4 rounded-3 shadow-sm">
+          {/* Title - same as media-center */}
+          <h2 className="header-title mb-4">Examination Section</h2>
+          
+          <Row>
+            {/* Sidebar - Col md={3} like media-center */}
+            <Col md={3} className="mb-3">
+              <div className="exam-menu-card">
+                <nav className="exam-nav">
+                  {menuItems.map((item, idx) => (
+                    <div key={item.key}>
+                      <button
+                        className={`exam-nav-btn${activeMenu === item.key ? " active" : ""}`}
+                        onClick={() => setActiveMenu(item.key)}
+                        type="button"
+                      >
+                        <i className={`${item.icon} icon`}></i>
+                        <span>{item.label}</span>
+                      </button>
+                      {idx < menuItems.length - 1 && <hr className="exam-nav-separator" />}
+                    </div>
+                  ))}
                 </nav>
               </div>
-            </aside>
+            </Col>
 
-            {/* Content Area */}
-            <main className="main-content">
-                <div className="content-card">
-                    {activeMenu === "academic-calendar" ? (
+            {/* Content Area - Col md={9} like media-center */}
+            <Col md={9}>
+              {activeMenu === "exam-calendar" ? (
+                <div className="exam-content-area">
+                  <h3 className="content-heading">{contentData[activeMenu].title}</h3>
+                  <p className="content-description">{contentData[activeMenu].content}</p>
+                  <div className="calendar-wrapper">
                     <EventCalendar
-                        events={eventsData.filter(e => e.type?.toLowerCase() === "exam")}
-                        title="Exam Calendar"
-                        hideExamOnSundaysAndHolidays={false} // set true if you want to hide exams on Sundays/holidays
+                      events={eventsData.filter(e => e.type?.toLowerCase() === "exam")}
+                      title="Exam Calendar"
+                      showTitle={false}
+                      variant="embedded"
+                      hideExamOnSundaysAndHolidays={false}
                     />
-                    ) : (
-                    <>
-                        <h3>{contentData[activeMenu].title}</h3>
-                        <p>{contentData[activeMenu].content}</p>
-                        <div className="content-placeholder">
-                        <p>Content for {contentData[activeMenu].title} will be displayed here.</p>
-                        </div>
-                    </>
-                    )}
+                  </div>
                 </div>
-            </main>
+              ) : activeMenu === "coe-message" ? (
+                <div className="exam-content-area">
+                  <h3 className="content-heading">{contentData[activeMenu].title}</h3>
+                  <p className="content-description">{contentData[activeMenu].content}</p>
+                  <div className="director-card">
+                    <div className="director-header">
+                      <div className="director-title">
+                        <h4>Dr. Abhilash Shukal</h4>
+                        <p className="designation">OSD Exam Section</p>
+                      </div>
+                    </div>
+                    
+                    <div className="message-content">
+                      <p className="greeting">Dear Students,</p>
+                      
+                      <p className="message">
+                        Welcome to the Examination Section of CHARUSAT. As the Controller of Examinations, 
+                        it is my privilege to oversee the examination processes that uphold the academic 
+                        standards and integrity of our esteemed institution.
+                      </p>
+                      
+                      <p className="message">
+                        Our examination system is designed to ensure fairness, transparency, and efficiency 
+                        in evaluating your academic performance. We have embraced cutting-edge technology 
+                        to implement paperless examinations, making CHARUSAT a pioneer in the state. This 
+                        initiative not only promotes environmental sustainability but also enhances the 
+                        examination experience through improved security and faster result processing.
+                      </p>
+                      
+                      <p className="message">
+                        I encourage all students to familiarize themselves with the examination rules, 
+                        schedules, and procedures outlined in this section. Your academic success is our 
+                        priority, and we are committed to providing you with a robust examination framework 
+                        that supports your learning journey.
+                      </p>
 
-          </div>
-        </div>
-      </div>
+                      <p className="message">
+                        Should you have any queries or require assistance, please do not hesitate to reach 
+                        out to the examination office. We are here to support you throughout your academic 
+                        endeavors.
+                      </p>
+
+                      <p className="message closing">
+                        Best wishes for your examinations and academic success.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="exam-content-area">
+                  <h3 className="content-heading">{contentData[activeMenu].title}</h3>
+                  <p className="content-description">{contentData[activeMenu].content}</p>
+                  <div className="content-placeholder">
+                    <p>Content for {contentData[activeMenu].title} will be displayed here.</p>
+                  </div>
+                </div>
+              )}
+            </Col>
+          </Row>
         </Container>
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <h4>Contact Us</h4>
-              <p>Email: examcell@charusat.ac.in</p>
-              <p>Phone: +91 2697 265011</p>
-            </div>
-            <div className="footer-section">
-              <h4>Quick Links</h4>
-              <a href="#">University Website</a>
-              <a href="#">Student Portal</a>
-              <a href="#">Faculty Portal</a>
-            </div>
-            <div className="footer-section">
-              <h4>Resources</h4>
-              <a href="#">FAQ</a>
-              <a href="#">Help Desk</a>
-              <a href="#">Downloads</a>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>© 2025 CHARUSAT. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      </div>
 
       <style jsx>{`
         .exam-section {
@@ -298,90 +322,111 @@ export default function ExamSection() {
           border-radius: 5px;
         }
 
-        /* Content Area */
-        .content-wrapper {
-          padding: 3rem 0;
+        /* Main Content Section - EXACTLY like media-center */
+        .exam-content-section {
+          background: #fff9f1;
+          min-height: 80vh;
         }
 
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1rem;
+        .header-title {
+          color: white;
+          background: #ff4d00;
+          padding: 1rem;
+          border-radius: 10px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 2rem;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.08);
         }
 
-        .layout {
-          display: grid;
-          grid-template-columns: 280px 1fr;
-          gap: 2rem;
-        }
-
-        /* Sidebar Styles */
-        .sidebar-card {
+        .exam-menu-card {
           background: #fff;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgba(0,78,146,0.08);
+          box-shadow: 0 2px 12px rgba(0,78,146,0.06);
           border: 1.5px solid #e5eaf2;
           padding: 1.2rem 0.5rem;
+          font-family: 'Segoe UI', Arial, sans-serif;
+          margin-bottom: 1.5rem;
           position: sticky;
           top: 2rem;
         }
 
-        .sidebar-nav {
+        .exam-nav {
           display: flex;
           flex-direction: column;
+          gap: 0;
         }
 
-        .sidebar-btn {
+        .exam-nav-btn {
           width: 100%;
           background: none;
           border: none;
+          outline: none;
           text-align: left;
-          padding: 0.9rem 1.2rem;
-          font-size: 1rem;
+          padding: 1rem 1.2rem;
+          font-size: 1.05rem;
           font-weight: 600;
           color: #004e92;
+          font-family: inherit;
+          letter-spacing: 0.3px;
           border-left: 4px solid transparent;
+          border-radius: 0;
           cursor: pointer;
-          transition: all 0.2s;
+          transition: all 0.2s ease;
           display: flex;
           align-items: center;
-          gap: 0.8rem;
+          gap: 1rem;
         }
 
-        .sidebar-btn .icon {
+        .exam-nav-btn .icon {
+          font-size: 22px;
           flex-shrink: 0;
+          width: 24px;
+          text-align: center;
+          line-height: 1;
+          transition: transform 0.2s ease;
         }
 
-        .sidebar-btn.active,
-        .sidebar-btn:hover {
+        .exam-nav-btn span {
+          flex: 1;
+          line-height: 1.4;
+        }
+
+        .exam-nav-btn.active,
+        .exam-nav-btn:hover {
           background: #f5f8ff;
           color: #ff4d00;
           border-left: 4px solid #ff4d00;
         }
 
-        .separator {
+        .exam-nav-btn.active .icon,
+        .exam-nav-btn:hover .icon {
+          transform: scale(1.1);
+        }
+
+        .exam-nav-separator {
           border: none;
           border-top: 1.5px solid #e5eaf2;
           margin: 0 0 0 1.2rem;
           width: calc(100% - 1.2rem);
         }
 
-        /* Main Content */
-        .content-card {
+        /* Content Area */
+        .exam-content-area {
           background: white;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
           padding: 2rem;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
 
-        .content-card h3 {
+        .content-heading {
           color: #004e92;
           font-size: 1.8rem;
           margin-bottom: 1rem;
           font-weight: 600;
         }
 
-        .content-card > p {
+        .content-description {
           color: #555;
           line-height: 1.6;
           margin-bottom: 1.5rem;
@@ -396,49 +441,90 @@ export default function ExamSection() {
           color: #888;
         }
 
-        /* Footer */
-        .footer {
-          background: linear-gradient(135deg, #004e92, #0066b3);
-          color: white;
-          padding: 3rem 0 1.5rem;
-          margin-top: 3rem;
+        /* COE Message Styles */
+        .director-card {
+          background: white;
+          border-radius: 15px;
+          padding: 2rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          border-left: 5px solid #0066b3;
         }
 
-        .footer-content {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-          margin-bottom: 2rem;
+        .director-header {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 2px solid #f0f0f0;
         }
 
-        .footer-section h4 {
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
-          font-weight: 600;
-        }
-
-        .footer-section p,
-        .footer-section a {
-          color: rgba(255,255,255,0.9);
-          text-decoration: none;
-          display: block;
+        .director-title h4 {
+          color: #0066b3;
+          font-size: 1.5rem;
+          font-weight: bold;
           margin-bottom: 0.5rem;
-          transition: color 0.2s;
         }
 
-        .footer-section a:hover {
-          color: #fff;
-          text-decoration: underline;
+        .designation {
+          color: #666;
+          font-style: italic;
+          margin-bottom: 0;
         }
 
-        .footer-bottom {
-          border-top: 1px solid rgba(255,255,255,0.2);
-          padding-top: 1.5rem;
-          text-align: center;
-          color: rgba(255,255,255,0.8);
+        .message-content {
+          color: #333;
+          line-height: 1.8;
+        }
+
+        .greeting {
+          font-weight: 600;
+          color: #0066b3;
+          margin-bottom: 1.5rem;
+          font-size: 1.1rem;
+        }
+
+        .message {
+          margin-bottom: 1.2rem;
+          text-align: justify;
+          font-size: 1rem;
+        }
+
+        .message.closing {
+          margin-top: 2rem;
+          font-weight: 500;
+          color: #0066b3;
+        }
+
+        /* Calendar wrapper */
+        .calendar-wrapper {
+          margin-top: 1.5rem;
+        }
+
+        .calendar-wrapper :global(.calendar-outer) {
+          background: transparent !important;
+          padding: 0 !important;
+          min-height: auto !important;
+        }
+
+        .calendar-wrapper :global(.calendar-flex) {
+          gap: 2rem !important;
+        }
+
+        .calendar-wrapper :global(.container) {
+          padding: 0 !important;
+          max-width: 100% !important;
         }
 
         /* Responsive */
+        @media (max-width: 900px) {
+          .header-title {
+            font-size: 1.5rem;
+            padding: 0.8rem;
+          }
+          .exam-menu-card {
+            position: static;
+            padding: 0.7rem 0.2rem;
+          }
+        }
+
         @media (max-width: 768px) {
           .slider-header h2 {
             font-size: 1.3rem;
@@ -454,45 +540,71 @@ export default function ExamSection() {
             height: 36px;
           }
 
-          .layout {
-            grid-template-columns: 1fr;
+          .header-title {
+            font-size: 1.3rem;
+            padding: 0.7rem;
           }
 
-          .sidebar-card {
-            position: static;
-            padding: 0.7rem 0.2rem;
-          }
-
-          .sidebar-nav {
-            flex-direction: row;
-            overflow-x: auto;
-            gap: 0.5rem;
-          }
-
-          .sidebar-btn {
-            min-width: 180px;
-            border-left: none;
-            border-bottom: 3px solid transparent;
-            justify-content: center;
-          }
-
-          .sidebar-btn.active,
-          .sidebar-btn:hover {
-            border-left: none;
-            border-bottom: 3px solid #ff4d00;
-          }
-
-          .separator {
-            display: none;
-          }
-
-          .content-card {
+          .exam-content-area {
             padding: 1.5rem;
           }
 
-          .footer-content {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+          .director-card {
+            padding: 1.5rem;
+          }
+
+          .director-title h4 {
+            font-size: 1.3rem;
+          }
+
+          .message {
+            font-size: 0.95rem;
+          }
+        }
+
+        @media (max-width: 700px) {
+          .exam-menu-card {
+            border-radius: 8px;
+            padding: 0.5rem 0.1rem;
+            margin-bottom: 1rem;
+          }
+
+          .exam-nav {
+            flex-direction: row;
+            overflow-x: auto;
+            gap: 0.5rem;
+            padding: 0.3rem;
+          }
+
+          .exam-nav-btn {
+            min-width: 160px;
+            text-align: center;
+            padding: 0.8rem 0.6rem;
+            border-left: none;
+            border-bottom: 3px solid transparent;
+            border-radius: 6px;
+            justify-content: center;
+            gap: 0.6rem;
+          }
+
+          .exam-nav-btn .icon {
+            font-size: 20px;
+            width: auto;
+          }
+
+          .exam-nav-btn span {
+            font-size: 0.95rem;
+          }
+
+          .exam-nav-btn.active,
+          .exam-nav-btn:hover {
+            border-left: none;
+            border-bottom: 3px solid #ff4d00;
+            background: #f5f8ff;
+          }
+
+          .exam-nav-separator {
+            display: none;
           }
         }
       `}</style>

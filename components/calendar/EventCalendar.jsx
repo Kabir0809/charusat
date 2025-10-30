@@ -19,7 +19,8 @@ import {
 export default function EventCalendar({
   events = [],
   title = "Academic Calendar",
-  hideExamOnSundaysAndHolidays = true
+  hideExamOnSundaysAndHolidays = true,
+  showTitle = true, // NEW
 }) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -51,7 +52,9 @@ export default function EventCalendar({
   return (
     <div className="calendar-outer">
       <Container className="bg-white p-4 rounded-3 shadow-sm">
-        <h2 className="header-title">{title}</h2>
+        {showTitle && title && ( // NEW
+          <h2 className="header-title">{title}</h2>
+        )}
         <div className="calendar-flex">
           <div className="calendar-main">
             <div className="calendar-header">
