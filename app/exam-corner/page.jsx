@@ -100,7 +100,6 @@ export default function ExamSection() {
         </div>
       </div>
 
-      {/* Main Content Section - EXACTLY like media-center */}
       <div className="exam-content-section py-4">
         <Container className="bg-white p-4 rounded-3 shadow-sm">
           {/* Title - same as media-center */}
@@ -324,7 +323,7 @@ export default function ExamSection() {
 
         /* Main Content Section - EXACTLY like media-center */
         .exam-content-section {
-          background: #fff9f1;
+          background: #fff8e7;
           min-height: 80vh;
         }
 
