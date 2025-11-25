@@ -1,91 +1,48 @@
 // import { Link } from "react-router-dom";
 "use client";
-import Link from "next/link";
-import Annual14 from "@/public/assets/files/Annual-Reports/CHARUSAT_14thAnnualReport.pdf";
-import Annual13 from "@/public/assets/files/Annual-Reports/CHARUSAT_13thAnnualReport.pdf";
-import Annual12 from "@/public/assets/files/Annual-Reports/CHARUSAT_12thAnnualReport.pdf";
-import Annual11 from "@/public/assets/files/Annual-Reports/CHARUSAT_11thAnnualReport.pdf";
-import Annual10 from "@/public/assets/files/Annual-Reports/CHARUSAT_10thAnnualReport.pdf";
-import Annual9 from "@/public/assets/files/Annual-Reports/CHARUSAT_9thAnnualReport.pdf";
-import Annual8 from "@/public/assets/files/Annual-Reports/CHARUSAT_8thAnnualReport.pdf";
 
 const searchList = [
   {
     title: "Annual Report 2022-23",
     btnText: "Download",
-    link: Annual14,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2022-23",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_14thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2022-23" }],
   },
   {
     title: "Annual Report 2021-22",
     btnText: "Download",
-    link: Annual13,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2021-22",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_13thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2021-22" }],
   },
   {
     title: "Annual Report 2020-21",
     btnText: "Download",
-    link: Annual12,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2020-21",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_12thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2020-21" }],
   },
   {
     title: "Annual Report 2019-20",
     btnText: "Download",
-    link: Annual11,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2019-20",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_11thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2019-20" }],
   },
   {
     title: "Annual Report 2018-19",
     btnText: "Download",
-    link: Annual10,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2018-19",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_10thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2018-19" }],
   },
   {
     title: "Annual Report 2017-18",
     btnText: "Download",
-    link: Annual9,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2017-18",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_9thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2017-18" }],
   },
   {
     title: "Annual Report 2016-17",
     btnText: "Download",
-    link: Annual8,
-    metaList: [
-      {
-        iconName: "icofont-calendar",
-        text: "2016-17",
-      },
-    ],
+    link: "/files/Annual-Reports/CHARUSAT_8thAnnualReport.pdf",
+    metaList: [{ iconName: "icofont-calendar", text: "2016-17" }],
   },
 ];
 
@@ -115,15 +72,16 @@ const AnnualReport = () => {
                                   <th>PDF Link</th>
                                 </tr>
                               </thead>
-                              {searchList.map((val, i) => (
-                                <tbody key={i}>
-                                  <tr>
+                              <tbody>
+                                {searchList.map((val, i) => (
+                                  <tr key={i}>
                                     <td>{val.title}</td>
                                     <td>
-                                      <Link
+                                      <a
                                         className="pdfLink"
-                                        target="_blank"
                                         href={val.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         <i
                                           className="icofont-file-pdf"
@@ -132,11 +90,11 @@ const AnnualReport = () => {
                                             color: "red",
                                           }}
                                         ></i>
-                                      </Link>
+                                      </a>
                                     </td>
                                   </tr>
-                                </tbody>
-                              ))}
+                                ))}
+                              </tbody>
                             </table>
                           </div>
                         </div>

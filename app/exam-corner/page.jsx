@@ -24,7 +24,7 @@ const menuItems = [
 const contentData = {
   "exam-calendar": {
     title: "Exam Calendar",
-    content: "View the complete exam calendar for the current semester including exam dates, holidays, and important deadlines."
+    content: "View the complete exam calendar for the current semester"
   },
   "coe-message": {
     title: "COE Message",
@@ -102,11 +102,10 @@ export default function ExamSection() {
 
       <div className="exam-content-section py-4">
         <Container className="bg-white p-4 rounded-3 shadow-sm">
-          {/* Title - same as media-center */}
+          
           <h2 className="header-title mb-4">Examination Section</h2>
           
           <Row>
-            {/* Sidebar - Col md={3} like media-center */}
             <Col md={3} className="mb-3">
               <div className="exam-menu-card">
                 <nav className="exam-nav">
@@ -127,7 +126,6 @@ export default function ExamSection() {
               </div>
             </Col>
 
-            {/* Content Area - Col md={9} like media-center */}
             <Col md={9}>
               {activeMenu === "exam-calendar" ? (
                 <div className="exam-content-area">
@@ -139,7 +137,7 @@ export default function ExamSection() {
                       title="Exam Calendar"
                       showTitle={false}
                       variant="embedded"
-                      hideExamOnSundaysAndHolidays={false}
+                      hideExamOnSundaysAndHolidays={true}
                     />
                   </div>
                 </div>
