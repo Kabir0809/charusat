@@ -178,7 +178,7 @@ const HoneycombGallery = () => {
     <div
       className="min-vh-100 d-flex flex-column"
       style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #0066b3 0%, #0066b3 100%)',
       }}
     >
       <div className="container text-center py-5">
