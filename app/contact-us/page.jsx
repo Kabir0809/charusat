@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import servicerules from "@/public/files/CHARUSAT Service Rules.pdf";
+import servicerules from "@/public/assets/files/CHARUSAT Service Rules.pdf";
 import Contact from "@/components/section/contact";
 
 const ContactUs = () => {
