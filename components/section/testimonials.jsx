@@ -11,7 +11,7 @@ import I5 from "@/public/assets/images/clients/05_.png";
 
 const subTitle = "Testimonials";
 const title = "See What They're Saying";
-
+  
 const clientSliderList = [
   {
     imgUrl: I1,

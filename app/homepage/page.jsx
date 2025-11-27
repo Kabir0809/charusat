@@ -12,12 +12,13 @@ import Collaboration from "@/components/section/collaboration";
 import AchievementThree from "@/components/section/achievement-3";
 import ClientsThree from "@/components/section/WPS";
 import Testimonials from "@/components/section/testimonials";
-
+import AboutUs from '@/components/section/aboutus.jsx';
 export default function HomepagePreview() {
   return (
     <Fragment>
       <Banner />
       <AwardsMarquee />
+      <AboutUs />
       <About />
       <Event />
       <VisionMission />
