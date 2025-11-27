@@ -60,6 +60,7 @@ const AwardsMarquee = () => {
                 <Image
                   src={item.src}
                   alt={item.alt}
+                  className="award-logo"
                   width={160}
                   height={48}
                   sizes="(max-width: 768px) 90px, 160px"
@@ -101,8 +102,9 @@ const AwardsMarquee = () => {
         }
 
         @media (max-width: 768px) {
-          :global(img[alt]) {
-            height: 30px !important; /* width stays auto */
+          .award-logo {
+            height: 30px !important;
+            width: auto !important;
           }
         }
       `}</style>

@@ -11,6 +11,7 @@ import Intiatives from "@/components/section/initiatives";
 import Collaboration from "@/components/section/collaboration";
 import AchievementThree from "@/components/section/achievement-3";
 import ClientsThree from "@/components/section/WPS";
+import Testimonials from "@/components/section/testimonials";
 
 export default function HomepagePreview() {
   return (
@@ -24,7 +25,8 @@ export default function HomepagePreview() {
       <Intiatives />
       <Collaboration />
       <AchievementThree />
-      <ClientsThree />
+      {/* <ClientsThree /> */}
+      <Testimonials />
     </Fragment>
   );
 }
