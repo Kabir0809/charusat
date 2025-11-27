@@ -21,13 +21,11 @@ const AwardsMarquee = () => {
 
   return (
     <section
-      className="position-relative"
+      className="position-relative awards-marquee"
       aria-label="Awards and accreditations"
       style={{
-        padding: "16px 0",
-        background: "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04))",
-        borderTop: "1px solid rgba(0,0,0,0.04)",
-        borderBottom: "1px solid rgba(0,0,0,0.04)",
+        padding: "30px 0",
+        background: "#ffffff",
         overflow: "hidden",
       }}
     >
@@ -36,11 +34,10 @@ const AwardsMarquee = () => {
           className="marquee-wrap"
           style={{
             position: "relative",
-            // Edge fade for nicer look
             WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
             maskImage:
-              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
           }}
         >
           <div className="marquee-track">
@@ -52,25 +49,27 @@ const AwardsMarquee = () => {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  padding: "0 28px",
-                  opacity: 0.95,
-                  minHeight: 44, // keeps row height stable
+                  padding: "0 32px",
+                  minHeight: "80px",
                 }}
               >
                 <Image
+                  loading="lazy"
                   src={item.src}
                   alt={item.alt}
                   className="award-logo"
-                  width={160}
-                  height={48}
-                  sizes="(max-width: 768px) 90px, 160px"
-                  priority={idx < 6}
+                  width={140}
+                  height={60}
+                  sizes="(max-width: 768px) 100px, 140px"
                   style={{
-                    height: "38px",
-                    width: "auto", // FIX: keep aspect ratio
-                    objectFit: "contain", // FIX: prevent squish
+                    height: "auto",
+                    maxHeight: "60px",
+                    width: "auto",
+                    maxWidth: "140px",
+                    objectFit: "contain",
                     display: "block",
-                    filter: "grayscale(10%) contrast(110%) brightness(100%)",
+                    filter: "grayscale(0%) contrast(105%) brightness(98%)",
+                    transition: "all 0.3s ease",
                   }}
                 />
               </div>
@@ -84,27 +83,59 @@ const AwardsMarquee = () => {
           display: inline-flex;
           white-space: nowrap;
           gap: 0;
-          animation: scroll-left 28s linear infinite;
+          animation: scroll-left 35s linear infinite;
           will-change: transform;
         }
 
         @keyframes scroll-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
 
         .marquee-wrap:hover .marquee-track {
           animation-play-state: paused;
         }
 
+        .logo-item:hover .award-logo {
+          transform: scale(1.08);
+          filter: grayscale(0%) contrast(110%) brightness(100%);
+        }
+
         @media (prefers-reduced-motion: reduce) {
-          .marquee-track { animation: none; transform: translateX(0); }
+          .marquee-track {
+            animation: none;
+            transform: translateX(0);
+          }
         }
 
         @media (max-width: 768px) {
-          .award-logo {
-            height: 30px !important;
-            width: auto !important;
+          :global(.awards-marquee .award-logo) {
+            max-height: 45px !important;
+            max-width: 100px !important;
+          }
+
+          .logo-item {
+            padding: 0 20px !important;
+            min-height: 60px !important;
+          }
+
+          .marquee-track {
+            animation-duration: 25s;
+          }
+        }
+
+        @media (max-width: 480px) {
+          :global(.awards-marquee .award-logo) {
+            max-height: 38px !important;
+            max-width: 85px !important;
+          }
+
+          .logo-item {
+            padding: 0 16px !important;
           }
         }
       `}</style>
