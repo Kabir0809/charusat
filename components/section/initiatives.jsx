@@ -108,7 +108,7 @@ export default function Initiatives() {
     
     <section
       className="py-5"
-      style={{ background: "#e1e1e1", minHeight: "100vh" }}
+      style={{  minHeight: "100vh" }}
       role="region"
       aria-labelledby="initiatives-heading"
       >

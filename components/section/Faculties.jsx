@@ -231,7 +231,7 @@ function Faculties() {
       role="region" 
       aria-labelledby="faculties-heading"
       style={{
-        background: "#e1e1e1",
+        // background: "#e1e1e1",
         minHeight: "100vh"
       }}
     >
